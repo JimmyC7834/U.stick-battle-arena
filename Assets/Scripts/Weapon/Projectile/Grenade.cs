@@ -85,4 +85,3 @@ namespace Game
             _projectile.ReturnToPool();
         }
     }
-}
