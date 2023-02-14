@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game 
 {
- public class HandGrenadeWeapon : RangedWeapon
+ public class GrenadeWeapon : RangedWeapon
     {
         private void Awake()
         {
@@ -25,7 +25,7 @@ namespace Game
             grenade.Launch(_projectileID, velocity, executor, BulletGravity, BulletLifespan);
 
             // Set grenade properties
-            HandGrenade grenadeComponent = grenade.GetComponent<HandGrenade>();
+            Grenade grenadeComponent = grenade.GetComponent<Grenade>();
             grenadeComponent.ExplosionRadius = 5f;
             grenadeComponent.ExplosionForce = 1000f;
             grenadeComponent.TimeToExplode = Time.time + 3f;

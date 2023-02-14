@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(Projectile))]
-    public class HandGrenade : MonoBehaviour
+    public class Grenade : MonoBehaviour
     {
         [SerializeField] private GameplayService _service;
         [SerializeField] private Projectile _projectile;
@@ -85,3 +85,4 @@ namespace Game
             _projectile.ReturnToPool();
         }
     }
+}
