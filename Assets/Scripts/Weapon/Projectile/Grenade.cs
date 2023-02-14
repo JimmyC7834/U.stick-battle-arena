@@ -2,37 +2,86 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game 
+namespace Game
 {
-    [SerializeField] private GameplayService _service;
-    [SerializeField] private Projectile _projectile;
-    [SerializeField] private int _damage;
-    [SerializeField] private float _score;
-    
-    public class Grenade : RangedWeapon
+    [RequireComponent(typeof(Projectile))]
+    public class HandGrenade : MonoBehaviour
     {
+        [SerializeField] private GameplayService _service;
+        [SerializeField] private Projectile _projectile;
+        [SerializeField] private int _damage;
+        [SerializeField] private float _score;
+        private float _explosionRadius = 5f;
+        private float _explosionForce = 1000f;
+        private float _timeToExplode = 3f;
+        private bool _exploded = false;
+
         private void Awake()
-    {
-    _usableItem = GetComponent<UsableItem>();
-    _usableItem.OnUseButtonDown += Throw;
-    }
-        private void Throw(PlayerController executor)
         {
-            Projectile grenade = service.ProjectileManager.
-                SpawnProjectile(_projectileID);
+            _projectile = GetComponent<Projectile>();
+            _projectile.OnHitPlayer += HandleHitPlayer;
+            _projectile.OnHitStage += HandleHitStage;
+        }
 
-            grenade.transform.position = _shootingPoint.position;
+        private void Update()
+        {
+            if (!_exploded && Time.time >= _timeToExplode)
+            {
+                Explode();
+            }
+        }
 
-                // flip velocity if facing different direction
-                // do we want to have different velocity for grenade and if so
-                // how do I go about that
-                Vector2 velocity = BulletVelocity;
-                if (_usableItem.Player.FacingLeft)
-                    velocity = new Vector2(-velocity.x, velocity.y);
-                
-                grenade.Launch(_projectileID, velocity, executor, BulletGravity, BulletLifespan);
-                // How do I go about changing a grenade's durability to be 1?
-                _usableItem.ReduceDurability(1);
+        private void HandleHitPlayer(PlayerController target, PlayerController dealer)
+        {
+            // Grenade doesn't detonate on player hit
+            ReturnToPool();
+        }
+
+        private void HandleHitStage()
+        {
+            // Grenade detonates on stage hit
+            Explode();
+        }
+
+        private void Explode()
+        {
+            _exploded = true;
+
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _explosionRadius);
+
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.CompareTag("Player"))
+                {
+                    PlayerController target = hit.GetComponent<PlayerController>();
+                    PlayerController dealer = _projectile.Owner;
+                    
+                    // Increase score of the dealer if hit
+                    _service.PlayerManager.IncreaseScore(dealer.Stat.ID, _score);
+                    // Deduct health of the hit player
+                    target.Stat.DeductHealth(
+                        dealer.Stat.ID, 
+                        new DamageInfo(
+                            dealer.Stat.ID,
+                            target.Stat.ID,
+                            _damage,
+                            null));
+                }
+                else if (hit.CompareTag("Stage"))
+                {
+                    Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        rb.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
+                    }
+                }
+            }
+
+            ReturnToPool();
+        }
+
+        private void ReturnToPool()
+        {
+            _projectile.ReturnToPool();
         }
     }
-}
