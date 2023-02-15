@@ -1,6 +1,7 @@
 ﻿using Game.Player;
 using UnityEngine;
 using UnityEngine.Events;
+using Object = System.Object;
 
 namespace Game
 {
@@ -23,27 +24,38 @@ namespace Game
         /**
          * Invoked when the durability of this item reaches 0
          */
-        public event UnityAction OnBreak = delegate {  };
+        public event UnityAction<UsableItem> OnBreak = delegate {  };
+        /**
+         * Invoked when durability of the item change
+         * 1st arg: the item
+         */
+        public event UnityAction<UsableItem> OnDurabilityChange = delegate {  };
+        public event UnityAction OnReturn = delegate {  };
 
         public PlayerController Player { get => _player; }
+        public float DurabilityPercentage { get => (float) _durability / _maxDurability; }
+        public Sprite Icon { get => _icon; }
         
-        private bool _pressing = false;
         private PlayerController _player;
 
         [SerializeField] private GameplayService _service;
+        [SerializeField] private Sprite _icon;
+        [SerializeField] private Transform _transform;
         [SerializeField] private Pickable _pickable;
         [SerializeField] private UsableItemID _id;
+        [SerializeField] private int _maxDurability;
         [SerializeField] private int _durability;
         private float _lifespan;
-        private bool _picked;
+        private bool _picked => _player != null;
+        private bool _equipped = false;
 
         protected virtual void Awake()
         {
+            _transform = GetComponent<Transform>();
             _pickable = GetComponent<Pickable>();
+            _durability = _maxDurability;
 
             _pickable.OnPicked += RegisterToPlayer;
-
-            _picked = false;
         }
 
         private void Update()
@@ -62,8 +74,16 @@ namespace Game
 
         private void DisablePhysics()
         {
+
             _pickable.Collider.enabled = false;
+            _pickable.Rigidbody.velocity = Vector2.zero;
             _pickable.Rigidbody.isKinematic = true;
+        }
+        
+        private void EnablePhysics()
+        {
+            _pickable.Collider.enabled = true;
+            _pickable.Rigidbody.isKinematic = false;
         }
         
         // hook the player's events and disable physics to be held 
@@ -74,24 +94,66 @@ namespace Game
             DisablePhysics();
             _player = player;
             player.GetComponent<PlayerInventory>().PickUpItem(this);
-            _picked = true;
         }
 
         private void HandleItemUseDown()
         {
-            _pressing = true;
+            if (!_equipped) return;
             OnUseButtonDown.Invoke(_player);
         }
         
         private void HandleItemUseUp()
         {
-            _pressing = false;
+            if (!_equipped) return;
             OnUseButtonUp.Invoke(_player);
         }
 
-        private void ReturnToPool()
+        /**
+         * remove hooks to the player and deactivate the gameObject
+         * used for item switching
+         */
+        public void UnEquip()
         {
+            _equipped = false;
+            gameObject.SetActive(false);
+        }
+        
+        /**
+         * hooks to the player and activate the gameObject
+         * used for item switching
+         */
+        public void Equip()
+        {
+            _equipped = true;
+            gameObject.SetActive(true);
+        }
+        
+        /**
+         * set the parent of this gameObject and reset local position
+         */
+        public void SetAndMoveToParent(Transform parent)
+        {
+            _transform.SetParent(parent, false);
+            _transform.localPosition = Vector3.zero;
+        }
+
+        private void DeregisterFromPlayer()
+        {
+            if (!_picked) return;
+            _player.OnItemUseDown -= HandleItemUseDown;
+            _player.OnItemUseUp -= HandleItemUseUp;
+            _player.GetComponent<PlayerInventory>().DumpItem(this);
+            _player = null;
+        }
+        
+        public void ReturnToPool()
+        {
+            EnablePhysics();
+            _equipped = false;
+            _durability = _maxDurability;
+            gameObject.SetActive(false);
             _service.UsableItemManager.ReturnUsableItem(_id, this);
+            OnReturn.Invoke();
         }
         
         public void IncreaseDurability(int value) => _durability += value;
@@ -99,8 +161,13 @@ namespace Game
         public void ReduceDurability(int value)
         {
             _durability -= value;
+            OnDurabilityChange.Invoke(this);
             if (_durability <= 0)
-                OnBreak.Invoke();
+            {
+                OnBreak.Invoke(this);
+                DeregisterFromPlayer();
+                ReturnToPool();
+            }
         }
 
         public void Spawn(float lifespan)

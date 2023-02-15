@@ -10,6 +10,9 @@ namespace Game
         Pistol,
         Dagger,
         Bow,
+        Sniper,
+        SMG,
+        Shotgun,
     }
     public class UsableItemManager : MonoBehaviour
     {
@@ -24,7 +27,8 @@ namespace Game
             for (int i = 0; i < _prefabEntries.Length; i++)
             {
                 Transform spawnParent = new GameObject($"{_prefabEntries[i].Id} Pool").GetComponent<Transform>();
-                
+                spawnParent.SetParent(transform);
+
                 _poolmap.Add(_prefabEntries[i].Id,
                     new GameObjectPool<UsableItem>(_prefabEntries[i].UsableItem, spawnParent));
             }
@@ -45,6 +49,7 @@ namespace Game
          */
         public void ReturnUsableItem(UsableItemID id, UsableItem usableItem)
         {
+            usableItem.SetAndMoveToParent(_poolmap[id].PoolParent);
             _poolmap[id].Release(usableItem);
         }
 
