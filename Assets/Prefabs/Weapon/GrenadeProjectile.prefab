@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735680260388025469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 2878241583352030977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8180586510007198370}
@@ -128,10 +128,10 @@ GameObject:
   - component: {fileID: 5288423834175117065}
   - component: {fileID: 2639317535345077685}
   - component: {fileID: 2773476263429943252}
-  - component: {fileID: 3734410904819582820}
-  - component: {fileID: 1259931302847444009}
+  - component: {fileID: -1368694583073659654}
+  - component: {fileID: 5668963575232860506}
   m_Layer: 0
-  m_Name: Grenade
+  m_Name: GrenadeProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,8 +184,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 30
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 8
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06de7de47dc7499cb853ca69556acb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3734410904819582820
+--- !u!114 &-1368694583073659654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,16 +212,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3213677623872792858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fab3e6986754e8e9f9f4b0db74e9acc, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ff2a828cd9e0bf4f9e8e43bd7f5466a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
-  _transform: {fileID: 0}
-  _pickable: {fileID: 0}
+  _lifespan: 15
   _id: 0
-  _maxDurability: 1
-  _durability: 1
---- !u!114 &1259931302847444009
+--- !u!114 &5668963575232860506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,16 +227,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3213677623872792858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c569a2575580241960f72395145792, type: 3}
+  m_Script: {fileID: 11500000, guid: 9aecc659973eccb4f9ac7d51b7651114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
-  _usableItem: {fileID: 0}
-  _shootingPoint: {fileID: 3158108005217157144}
-  _projectileID: 2
-  _bulletVelocity: {x: 5, y: 5}
-  _bulletGravity: 10
-  _bulletLifespan: 15
+  _projectile: {fileID: 0}
+  _damage: 10
+  _score: 10
+  _splashRadius: 3
 --- !u!1 &3320765314778584009
 GameObject:
   m_ObjectHideFlags: 0

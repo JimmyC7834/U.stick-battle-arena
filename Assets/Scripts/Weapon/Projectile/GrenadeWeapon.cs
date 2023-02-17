@@ -21,6 +21,7 @@ namespace Game
 
         private void HandleHitPlayer(PlayerController target, PlayerController dealer)
         {
+            Debug.Log($"Hit {target}");
             // Increase score of the dealer if hit
             _service.PlayerManager.IncreaseScore(dealer.Stat.ID, _score);
             // Deduct health of the hit player
