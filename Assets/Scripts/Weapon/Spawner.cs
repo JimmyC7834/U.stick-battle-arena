@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game
 {
@@ -6,13 +8,18 @@ namespace Game
     {
         [SerializeField] private GameplayService _service;
         [SerializeField] private UsableItemID _usableItemID;
-        [SerializeField] private float _spawnLifespan;
         
         [Header("Spawner Settings")]
         [SerializeField] private float _spawnInterval;
         [SerializeField] private float _randomXPosLowerBound;
         [SerializeField] private float _randomXPosUpperBound;
+        private Vector3 _originalPosition;
         private float _currentTime;
+
+        private void Awake()
+        {
+            _originalPosition = transform.position;
+        }
 
         private void Update()
         {
@@ -38,9 +45,9 @@ namespace Game
         private void UpdatePosition()
         {
             // random x position
-            transform.position = new Vector3(
+            transform.position = _originalPosition + new Vector3(
                 Random.Range(_randomXPosLowerBound, _randomXPosUpperBound),
-                transform.position.y);
+                0);
         }
 
         private void SpawnWeapon()
@@ -48,9 +55,6 @@ namespace Game
             // Get a weapon from the pool and set to the current location
             UsableItem weapon = _service.UsableItemManager.SpawnProjectile(_usableItemID);
             weapon.transform.position = transform.position;
-            
-            // Set the lifespan of this weapon
-            weapon.Spawn(_spawnLifespan);
         }
     }
 }
