@@ -6,7 +6,7 @@ namespace Game.Player
     /**
      * Represent the inventory of a player
      */
-    [RequireComponent(typeof(PlayerController), typeof(PlayerStat))]
+    [RequireComponent(typeof(PlayerMovement), typeof(PlayerStat))]
     public class PlayerInventory : MonoBehaviour
     {
         public UsableItem EquippedItem => _inventory.Item1;

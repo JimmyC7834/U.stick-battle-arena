@@ -16121,6 +16121,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
   _playerID: 3
+--- !u!212 &1160100802 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7920190688119049234, guid: a787b53a2e476af41913f268045088b8, type: 3}
+  m_PrefabInstance: {fileID: 1186476230}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1186476230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17608,6 +17613,28 @@ MonoBehaviour:
   _itemDurabilityBar: {fileID: 1717232678}
   _itemIcon: {fileID: 1361713555}
   _playerID: 2
+--- !u!1 &1844826665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7920190687885665417, guid: a787b53a2e476af41913f268045088b8, type: 3}
+  m_PrefabInstance: {fileID: 1186476230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1844826672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844826665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5961b90caa0306749ab06721f1a4c2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxTilt: 4
+  _tiltSpeed: 20
+  _landAnimDuration: 0.45
+  _renderer: {fileID: 1160100802}
+  _anim: {fileID: 0}
 --- !u!1 &1852894410
 GameObject:
   m_ObjectHideFlags: 0
