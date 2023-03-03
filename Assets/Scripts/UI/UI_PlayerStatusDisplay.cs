@@ -44,7 +44,7 @@ namespace Game.UI
 
         private void UpdateHealthBarVisual(PlayerStat playerStat)
         {
-            _healthBar.fillAmount = playerStat.HealthPercentage * 0.5f;
+            _healthBar.fillAmount = playerStat.HealthPercentage;
         }
 
         private void HookToItemDurabilityChange(PlayerInventory inventory)
@@ -60,7 +60,7 @@ namespace Game.UI
 
         private void UpdateDurabilityBar(UsableItem item)
         {
-            _itemDurabilityBar.fillAmount = item.DurabilityPercent * 0.5f;
+            _itemDurabilityBar.fillAmount = item.DurabilityPercent;
         }
         
         // TODO : rework on inventory icon, currently coded for demo
