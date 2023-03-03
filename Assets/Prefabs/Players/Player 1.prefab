@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4044784411755603155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheckPt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4044784411980472745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_WallCheckPt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4044784412053698987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_WallCheckPt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4044784412276161184}
   - component: {fileID: 4044784412276161191}
   - component: {fileID: 6182279596286183037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4044784412877247223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 6182279595862353051}
   - component: {fileID: 6182279595862353029}
   - component: {fileID: 475500005790533100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4044784413256975037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Checkers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6182279597670354634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
