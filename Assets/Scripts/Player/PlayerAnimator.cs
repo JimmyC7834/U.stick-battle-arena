@@ -78,10 +78,10 @@ namespace Game.Player
 
         private int _currentState;
 
-        private static readonly int Idle = Animator.StringToHash("PlayerIdle");
-        private static readonly int Land = Animator.StringToHash("PlayerLanding");
-        private static readonly int Jump = Animator.StringToHash("PlayerJump");
-        private static readonly int Walk = Animator.StringToHash("PlayerWalk");
+        private static readonly int Idle = Animator.StringToHash("PlayerIdle16");
+        private static readonly int Land = Animator.StringToHash("PlayerDrop16");
+        private static readonly int Jump = Animator.StringToHash("PlayerJump16");
+        private static readonly int Walk = Animator.StringToHash("PlayerWalk16");
 
         #endregion
     }
