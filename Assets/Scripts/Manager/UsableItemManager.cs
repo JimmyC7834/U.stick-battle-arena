@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Game.DataSet;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game
 {
@@ -16,14 +17,16 @@ namespace Game
         Shotgun = 6,
         HandGrenade = 7,
     }
-    
+
     public class UsableItemManager : MonoBehaviour
     {
         public static readonly UsableItemID[] UsableItemIDs =
         {
-            UsableItemID.Bow, UsableItemID.Dagger, UsableItemID.Pistol, 
+            UsableItemID.Bow, UsableItemID.Dagger, UsableItemID.Pistol,
             UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade, UsableItemID.SMG
         };
+
+        public event UnityAction OnReturnUsableItem = () => { };
         
         [SerializeField] private UsableItemDataSetSO _usableItemData;
 
@@ -57,6 +60,7 @@ namespace Game
          */
         public void ReturnUsableItem(UsableItemID id, UsableItem usableItem)
         {
+            OnReturnUsableItem.Invoke();
             usableItem.SetAndMoveToParent(_poolmap[id].PoolParent);
             _poolmap[id].Release(usableItem);
         }
