@@ -35,19 +35,18 @@ namespace Game.Player
         public event UnityAction<PlayerInventory> OnItemPick = (_) => { };
         
         [SerializeField] private Transform _itemHolderTrans;
-        private PlayerController _playerController;
+        private PlayerMovement _playerController;
         private PlayerStat _playerStat;
         private (UsableItem, UsableItem) _inventory;
 
         private void Awake()
         {
-            _playerController = GetComponent<PlayerController>();
+            _playerController = GetComponent<PlayerMovement>();
             _playerStat = GetComponent<PlayerStat>();
             
             _playerController.OnItemUseDown += ItemUseDown;
             _playerController.OnItemUseUp += ItemUseUp;
             _playerController.OnSwitchItem += SwitchItem;
-            _playerController.OnMovement += FlipItemHolder;
         }
 
         private void FlipItemHolder(Vector2 dir)

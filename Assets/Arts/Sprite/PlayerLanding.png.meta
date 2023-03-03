@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 000554a0d31cd4542bcaf200434184f2
+guid: 27347ac6a26d0b84095a2f8f5839126a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,13 +43,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -105,11 +105,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player2Idle_0
+      name: PlayerLanding_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 0
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -119,18 +119,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51f2cca8cbc4a1942a222fce7036e6a8
-      internalID: 1842406632
+      spriteID: 2a5a2495911f8c546829f1fe3bc7539a
+      internalID: 1622100222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player2Idle_1
+      name: PlayerLanding_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 16
+        x: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f788bd106d098443bf26baed8c12c13
-      internalID: 1623847638
+      spriteID: 531048ee24f3b9542ac0de15b64bbbfe
+      internalID: -1841777254
       vertices: []
       indices: 
       edges: []
@@ -157,8 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player2Idle_0: 1842406632
-      Player2Idle_1: 1623847638
+      PlayerLanding_1: -1841777254
+      PlayerLanding_0: 1622100222
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

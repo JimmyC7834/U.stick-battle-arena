@@ -16,12 +16,6 @@ namespace Game.Player
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class PlayerMovement : MonoBehaviour
 	{
-		//Scriptable object which holds all the player's movement parameters. If you don't want to use it
-		//just paste in all the parameters, though you will need to manuly change all references in this script
-
-		//HOW TO: to add the scriptable object, right-click in the project window -> create -> Player Data
-		//Next, drag it into the slot in playerMovement on your player
-
 		public PlayerData Data;
 
 		#region Variables
@@ -31,10 +25,11 @@ namespace Game.Player
 		//Variables control the various actions the player can perform at any time.
 		//These are fields which can are public allowing for other sctipts to read them
 		//but can only be privately written to.
-		public bool IsFacingRight { get; private set; }
+		public bool IsFacingLeft { get; private set; }
 		public bool IsJumping { get; private set; }
 		public bool IsWallJumping { get; private set; }
 		public bool IsSliding { get; private set; }
+		public Vector2 MovementInput { get => _moveInput; }
 
 		//Timers (also all fields, could be private and a method returning a bool could be used)
 		public float LastOnGroundTime { get; private set; }
@@ -98,7 +93,7 @@ namespace Game.Player
 		private void Start()
 		{
 			SetGravityScale(Data.gravityScale);
-			IsFacingRight = true;
+			IsFacingLeft = true;
 		}
 
 		private void OnDestroy()
@@ -111,7 +106,7 @@ namespace Game.Player
 		{
 			_moveInput = vec;
 			if (_moveInput.x != 0)
-				CheckDirectionToFace(_moveInput.x > 0);
+				CheckDirectionToFace(_moveInput.x < 0);
 		
 		
 			if(_moveInput.y > 0 && !IsJumping)
@@ -146,13 +141,13 @@ namespace Game.Player
 				}		
 
 				//Right Wall Check
-				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && IsFacingRight)
-				     || (Physics2D.OverlapBox(_backWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && !IsFacingRight)) && !IsWallJumping)
+				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && IsFacingLeft)
+				     || (Physics2D.OverlapBox(_backWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && !IsFacingLeft)) && !IsWallJumping)
 					LastOnWallRightTime = Data.coyoteTime;
 
 				//Right Wall Check
-				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && !IsFacingRight)
-				     || (Physics2D.OverlapBox(_backWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && IsFacingRight)) && !IsWallJumping)
+				if (((Physics2D.OverlapBox(_frontWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && !IsFacingLeft)
+				     || (Physics2D.OverlapBox(_backWallCheckPoint.position, _wallCheckSize, 0, _groundLayer) && IsFacingLeft)) && !IsWallJumping)
 					LastOnWallLeftTime = Data.coyoteTime;
 
 				//Two checks needed for both left and right walls since whenever the play turns the wall checkPoints swap sides
@@ -346,7 +341,7 @@ namespace Game.Player
 			scale.x *= -1;
 			transform.localScale = scale;
 
-			IsFacingRight = !IsFacingRight;
+			IsFacingLeft = !IsFacingLeft;
 		}
 		#endregion
 
@@ -411,9 +406,9 @@ namespace Game.Player
 
 
 		#region CHECK METHODS
-		public void CheckDirectionToFace(bool isMovingRight)
+		public void CheckDirectionToFace(bool isMovingLeft)
 		{
-			if (isMovingRight != IsFacingRight)
+			if (isMovingLeft != IsFacingLeft)
 				Turn();
 		}
 
