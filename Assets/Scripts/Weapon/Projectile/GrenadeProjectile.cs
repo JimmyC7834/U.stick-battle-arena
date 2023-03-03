@@ -10,22 +10,10 @@ namespace Game
         
         private void Start()
         {
-            OnHitPlayer += HandleHitPlayer;
+            OnHitPlayer += (_) => Explode();
             OnHitStage += Explode;
         }
 
-        private void HandleHitPlayer(DamageInfo damageInfo)
-        {
-            if (damageInfo.Dealer == damageInfo.Target) return;
-
-            // Increase score of the dealer if hit
-            _service.PlayerManager.IncreaseScore(damageInfo.Dealer, _score);
-            // Deduct health of the hit player
-            _service.PlayerManager.
-                GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
-            ReturnToPool();
-        }
-        
         private void Explode()
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _splashRadius);
@@ -36,6 +24,7 @@ namespace Game
                 
                 DamageInfo damageInfo = CreateDamageInfo(player.ID);
                 // Deduct health of the player
+                _service.PlayerManager.IncreaseScore(damageInfo.Dealer, _score);
                 _service.PlayerManager.
                     GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
             }

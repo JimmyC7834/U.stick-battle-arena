@@ -50,7 +50,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.19
+  m_Radius: 0.26
 --- !u!50 &1083561487914459866
 Rigidbody2D:
   serializedVersion: 4
@@ -85,9 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
+  _id: 5
   _damage: 3
   _score: 3
-  _id: 5
   _hit: 0
 --- !u!1 &1083561488964981533
 GameObject:
@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 1083561489089241988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.31, y: 0.29, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1083561488964981532}
@@ -194,8 +194,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 868ec022ec5370c4cafbe00bd333295b, type: 3}
-  m_Color: {r: 0.7735849, g: 0.5344688, b: 0.11311854, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 89050279cb87b4c45a277d50c6f7bfff, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
