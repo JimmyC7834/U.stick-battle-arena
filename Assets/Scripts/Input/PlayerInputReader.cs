@@ -55,6 +55,11 @@ namespace Game
 
         #endregion
 
+        public void EnablePlayerInput()
+        {
+            EnablePlayerInput(_playerID);
+        }
+        
         public void EnablePlayerInput(PlayerID id)
         {
             // enable corresponding input for player id

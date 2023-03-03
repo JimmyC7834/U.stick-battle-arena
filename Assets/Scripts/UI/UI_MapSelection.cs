@@ -11,13 +11,13 @@ namespace Game
         
         public void LoadMap1()
         {
-            _gameSettings.SetGameplayStageID(SceneID.Map1);
+            _gameSettings.SetGameplayStageID(SceneID.Farm);
             _gameService.SceneManager.LoadScene(_gameSettings.GameplayStageID);
         }
         
         public void LoadMap2()
         {
-            _gameSettings.SetGameplayStageID(SceneID.Map2);
+            _gameSettings.SetGameplayStageID(SceneID.Farm);
             _gameService.SceneManager.LoadScene(_gameSettings.GameplayStageID);
         }
     }
