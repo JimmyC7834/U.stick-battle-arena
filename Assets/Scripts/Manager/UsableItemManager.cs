@@ -15,6 +15,7 @@ namespace Game
         SMG = 5,
         Shotgun = 6,
         HandGrenade = 7,
+        Minigun = 8,
     }
     
     public class UsableItemManager : MonoBehaviour
@@ -22,7 +23,8 @@ namespace Game
         public static readonly UsableItemID[] UsableItemIDs =
         {
             UsableItemID.Bow, UsableItemID.Dagger, UsableItemID.Pistol, 
-            UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade, UsableItemID.SMG
+            UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade,
+            UsableItemID.SMG, UsableItemID.Minigun,
         };
         
         [SerializeField] private UsableItemDataSetSO _usableItemData;
