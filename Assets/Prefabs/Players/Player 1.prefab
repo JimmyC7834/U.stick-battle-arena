@@ -164,8 +164,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1559172925
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 41237867, guid: 39464649462101e469363f66787d4722, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -260,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4044784413114405436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.86, y: 2.44, z: -0.1153715}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -308,7 +308,7 @@ MonoBehaviour:
   _groundCheckSize: {x: 0.6, y: 0.1}
   _frontWallCheckPoint: {fileID: 4044784412053698987}
   _backWallCheckPoint: {fileID: 4044784411980472745}
-  _wallCheckSize: {x: 0.4, y: 0.5}
+  _wallCheckSize: {x: 0.4, y: 0.6}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 128
