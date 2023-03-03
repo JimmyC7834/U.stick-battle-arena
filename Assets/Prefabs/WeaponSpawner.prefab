@@ -45,8 +45,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
-  _entries: []
-  _spawnInterval: 0
-  _maxItemNumber: 0
-  _randomXPosLowerBound: 0
-  _randomXPosUpperBound: 0
+  _entries:
+  - id: 1
+    odds: 10
+  - id: 2
+    odds: 15
+  - id: 3
+    odds: 8
+  - id: 4
+    odds: 3
+  - id: 5
+    odds: 6
+  _positionEntries:
+  - {fileID: 4369006074607948397}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _spawnInterval: 10
+  _maxItemNumber: 5

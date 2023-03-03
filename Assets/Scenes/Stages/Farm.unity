@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59456515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.007175, y: 4.2744484, z: 0.015278529}
+  m_LocalPosition: {x: -4.23, y: 10.49, z: 0.015278529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11650,7 +11650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714460658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.127174, y: -1.3455516, z: 0.015278529}
+  m_LocalPosition: {x: 11.96, y: -7.15, z: 0.015278529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15383,7 +15383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810037487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.112825, y: -0.08555165, z: 0.015278529}
+  m_LocalPosition: {x: -14.82, y: -3.84, z: 0.015278529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16926,7 +16926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547965480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.9428253, y: 6.5544486, z: 0.015278529}
+  m_LocalPosition: {x: -15.16, y: 5.96, z: 0.015278529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17172,7 +17172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1629686675}
   m_Layer: 0
-  m_Name: WeaponSpanerParent
+  m_Name: WeaponSpawnerSetup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17186,7 +17186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629686674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2871742, y: -0.46444836, z: -0.0485404}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17800,74 +17800,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1629686675}
     m_Modifications:
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _maxItemNumber
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _spawnInterval
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _randomXPosLowerBound
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _randomXPosUpperBound
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[0].id
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[1].id
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[2].id
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[3].id
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[4].id
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[0].odds
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[1].odds
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[2].odds
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[3].odds
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _entries.Array.data[4].odds
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _positionEntries.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
-      propertyPath: _positionEntries.Array.data[0]
-      value: 
-      objectReference: {fileID: 656569576}
     - target: {fileID: 4369006074607948396, guid: 0de60eed97908794db0273d71c526fe9, type: 3}
       propertyPath: _positionEntries.Array.data[1]
       value: 

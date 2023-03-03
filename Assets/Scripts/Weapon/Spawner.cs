@@ -21,7 +21,7 @@ namespace Game
         private float _currentTime;
         private int _currItemNum;
 
-        private void Awake()
+        private void Start()
         {
             _weaponIDList = new List<UsableItemID>();
             _service.UsableItemManager.OnReturnUsableItem += ReturnUsableItem;
@@ -64,7 +64,8 @@ namespace Game
 
             // Get a weapon from the pool and set to the current location
             UsableItem weapon = _service.UsableItemManager.SpawnProjectile(_weaponIDList[rand]);
-            weapon.transform.position = _positionEntries[randPos].position;
+            weapon.transform.position = _positionEntries[
+                (int) Mathf.Pow(randPos, 7) % _positionEntries.Length].position;
             _currItemNum++;
         }
 
