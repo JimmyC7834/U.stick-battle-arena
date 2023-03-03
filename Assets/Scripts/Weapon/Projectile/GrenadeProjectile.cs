@@ -1,4 +1,3 @@
-using System;
 using Game.Player;
 using UnityEngine;
 
@@ -16,11 +15,14 @@ namespace Game
 
         private void Explode()
         {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _splashRadius);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(
+                transform.position, 
+                _splashRadius,
+                LayerMask.NameToLayer("Player"));
             foreach (Collider2D hit in hits)
             {
                 PlayerStat player = hit.GetComponent<PlayerStat>();
-                if (player != null) continue;
+                if (player == null) continue;
                 
                 DamageInfo damageInfo = CreateDamageInfo(player.ID);
                 // Deduct health of the player
