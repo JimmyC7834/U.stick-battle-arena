@@ -50,6 +50,15 @@ namespace Game.Player
             }
             CheckDeath();
         }
+        
+        /**
+         * Increase the health of the player by given damage;
+         * set the the player ID of the dealer for kill bonus reference.
+         */
+        public void IncreaseHealth(DamageInfo damageInfo)
+        {
+            _health += damageInfo.Damage;
+        }
 
         private void CheckDeath()
         {
