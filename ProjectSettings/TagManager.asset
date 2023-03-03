@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Player
   - StagePlatform
-  - 
+  - Weapon
   - 
   - 
   - 
@@ -49,6 +49,12 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1559172925
+    locked: 0
+  - name: Weapon
+    uniqueID: 4215977981
     locked: 0
   - name: StageFront
     uniqueID: 2716515897
