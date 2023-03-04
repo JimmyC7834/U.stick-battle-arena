@@ -80,5 +80,11 @@ namespace Game
 
             _playerSettings[info.PlayerID] = info;
         }
+        
+        public PlayerReadyInfo GetPlayerSettings(PlayerID id)
+        {
+            if (!PlayerIDInGameplay(id)) return _playerSettings[0];
+            return _playerSettings[id];
+        }
     }
 }

@@ -72,6 +72,11 @@ namespace Game.UI
 
         private void Activate() => _input.EnablePlayerInput(_playerID);
 
+        private void OnDestroy()
+        {
+            Destroy(_input);
+        }
+
         private void HandleReady()
         {
             // check if the player has joined
