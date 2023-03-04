@@ -424,6 +424,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9e1c2d7b7490f4189b179d7e774f1d
+      internalID: 1790634818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KennyUI_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6827320af219a4fbc4591fef75148d
+      internalID: 2059917213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KennyUI_17
+      rect:
+        serializedVersion: 2
+        x: 80
         y: 304
         width: 16
         height: 16
@@ -434,8 +476,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 108e0874f03a70c40af2c41057997360
-      internalID: -1911810937
+      spriteID: 9a4399b0dbddcfd4aa56dbf38a5aa7df
+      internalID: 111391506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KennyUI_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6760b2d54f01948918910e918ee44d
+      internalID: -1867435623
       vertices: []
       indices: 
       edges: []
@@ -456,14 +519,17 @@ TextureImporter:
       KennyUI_7: 902622492
       KennyUI_0: -811973758
       KennyUI_13: 152520746
+      KennyUI_17: 111391506
       KennyUI_6: 247549979
       KennyUI_12: 503226953
       KennyUI_1: 122748357
       KennyUI_5: -537389679
       KennyUI_10: 979060657
+      KennyUI_18: -1867435623
       KennyUI_4: -2087630170
       KennyUI_3: 870406463
-      KennyUI_15: -1911810937
+      KennyUI_15: 1790634818
+      KennyUI_16: 2059917213
       KennyUI_14: -962432654
       KennyUI_8: 942209510
       KennyUI_11: -2100484354
