@@ -21,6 +21,7 @@ namespace Game
 
         private void Update()
         {
+            base.Update();
             if (!_shooting) return;
             
             if (_currTime > 0)

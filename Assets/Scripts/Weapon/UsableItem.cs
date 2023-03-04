@@ -60,10 +60,13 @@ namespace Game
         [SerializeField] protected GameObject _visual;
         [SerializeField] protected AudioID _audioOnUse;
         [SerializeField] protected AudioID _audioOnEquip;
+		[SerializeField] private float _maxTilt = 4;
+        [SerializeField] private float _tiltSpeed = 20;
 
         private Rigidbody2D _rigidbody;
         private Collider2D _collider;
         private Transform _transform;
+		private Vector3 _targetAngle;
 
         [SerializeField] private UsableItemID _id;
         [SerializeField] private int _maxDurability;
@@ -171,6 +174,7 @@ namespace Game
          */
         public void ReduceDurability(int value)
         {
+			applyRecoil();
             _durability -= value;
             OnDurabilityChange.Invoke(this);
             if (_durability > 0) return;
@@ -179,6 +183,21 @@ namespace Game
             _service.UsableItemManager.ReturnUsableItem(_id, this);
             Reset();
         }
+
+		private void applyRecoil() {
+			_targetAngle = new Vector3(0, 0, _targetAngle.z - 20f);
+			_visual.transform.rotation = Quaternion.Euler(_targetAngle);
+			// _visual.transform.rotation = _targetAngle;
+		}
+
+		public void Update() {
+            _visual.transform.rotation = Quaternion.RotateTowards(_visual.transform.rotation, Quaternion.Euler(new Vector3(0, 0, 0)), _tiltSpeed * Time.deltaTime);
+			_targetAngle.z = _visual.transform.rotation.eulerAngles.z;
+			if (_targetAngle.z != 0) {
+				Debug.Log(_targetAngle.z);
+			}
+			// _visual.transform.rotation = Quaternion.Euler(_targetAngle);
+		}
 
         public void MakeInvisible()
         {
