@@ -133,7 +133,8 @@ MonoBehaviour:
   _audioOnUse: 6
   _audioOnEquip: 7
   _maxTilt: 4
-  _tiltSpeed: 500
+  _tiltSpeed: 70
+  _recoilAmount: 30
   _id: 6
   _maxDurability: 9
   _durability: 3

@@ -132,6 +132,9 @@ MonoBehaviour:
   _visual: {fileID: 1822478864249552274}
   _audioOnUse: 2
   _audioOnEquip: 3
+  _maxTilt: 30
+  _tiltSpeed: 80
+  _recoilAmount: 10
   _id: 1
   _maxDurability: 8
   _durability: 8
