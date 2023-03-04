@@ -109,7 +109,7 @@ MonoBehaviour:
   - {fileID: 1303885679095459483}
   - {fileID: 1303885678278992102}
   - {fileID: 1303885678841689127}
-  _playerDefaultLife: 1
+  _playerDefaultLife: 5
 --- !u!1 &1303885678278992104
 GameObject:
   m_ObjectHideFlags: 0

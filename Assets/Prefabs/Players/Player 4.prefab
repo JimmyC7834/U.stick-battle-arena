@@ -327,7 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
   _id: 3
-  _maxHealth: 0
+  _maxHealth: 10
   _killBonus: 0
 --- !u!114 &6182279595862353051
 MonoBehaviour:
