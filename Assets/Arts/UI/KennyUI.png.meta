@@ -419,6 +419,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: KennyUI_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 304
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108e0874f03a70c40af2c41057997360
+      internalID: -1911810937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -442,6 +463,7 @@ TextureImporter:
       KennyUI_10: 979060657
       KennyUI_4: -2087630170
       KennyUI_3: 870406463
+      KennyUI_15: -1911810937
       KennyUI_14: -962432654
       KennyUI_8: 942209510
       KennyUI_11: -2100484354
