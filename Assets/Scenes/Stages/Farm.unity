@@ -13209,6 +13209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameService: {fileID: 11400000, guid: e6f021f86780f1d4293d31b4d110feaa, type: 2}
+  _gameplayService: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
   _gameInputReader: {fileID: 11400000, guid: 400e4facf778cfc419f15e091268f8f1, type: 2}
   _continueButton: {fileID: 1595614002}
   _returnToMainMenuButton: {fileID: 2012054236}

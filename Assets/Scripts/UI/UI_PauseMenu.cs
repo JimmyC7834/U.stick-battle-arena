@@ -6,6 +6,7 @@ namespace Game.UI
     public class UI_PauseMenu : MonoBehaviour
     {
         [SerializeField] private GameService _gameService;
+        [SerializeField] private GameplayService _gameplayService;
         [SerializeField] private GameInputReader _gameInputReader;
         [SerializeField] private Button _continueButton;
         [SerializeField] private Button _returnToMainMenuButton;
@@ -40,12 +41,14 @@ namespace Game.UI
         {
             Time.timeScale = 0;
             gameObject.SetActive(true);
+            _gameplayService.PauseGameplay();
         }
         
         private void ClosePauseMenu()
         {
             Time.timeScale = 1;
             gameObject.SetActive(false);
+            _gameplayService.ContinueGameplay();
         }
     }
 }
