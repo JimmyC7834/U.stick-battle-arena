@@ -17,6 +17,7 @@ namespace Game.UI
                 _playerPanels[i].OnReady += SetGameplaySetting;
                 _playerPanels[i].OnJoin += AddPlayerCount;
             }
+            _gameSettings.SetPlayerCount(GameSettingsSO.MIN_PLAYER_COUNT);
         }
 
         private void CheckGameStart()
