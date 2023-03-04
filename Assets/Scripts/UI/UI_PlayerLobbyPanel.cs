@@ -8,7 +8,9 @@ namespace Game.UI
     public class UI_PlayerLobbyPanel : MonoBehaviour
     {
         public event UnityAction<PlayerReadyInfo> OnReady = (_) => { };
+        public event UnityAction OnJoin = () => { };
         public bool IsReady { get; private set; } = false;
+        public bool Joined { get => _joined; }
 
         [SerializeField] private PlayerInputReader _input;
         [SerializeField] private PlayerID _playerID;
@@ -17,7 +19,9 @@ namespace Game.UI
         [SerializeField] private Image _playerAccDisplay;
         [SerializeField] private Image _playerDisplay;
         [SerializeField] private RectTransform _readyText;
-        
+        [SerializeField] private GameObject _joinPrompt;
+        [SerializeField] private bool _joined;
+
         [Header("Arrows Visual")]
         
         [SerializeField] private RectTransform _arrowUp;
@@ -70,6 +74,16 @@ namespace Game.UI
 
         private void HandleReady()
         {
+            // check if the player has joined
+            if (!_joined)
+            {
+                _joined = true;
+                _joinPrompt.SetActive(false);
+                OnJoin.Invoke();
+                return;
+            }
+            
+            // handle ready and un ready
             if (IsReady)
             {
                 IsReady = false;
@@ -77,17 +91,18 @@ namespace Game.UI
                 return;
             }
             
+            IsReady = true;
+            _readyText.gameObject.SetActive(true);
             OnReady.Invoke(
                 new PlayerReadyInfo(
                     _playerID, 
                     _spriteSelector.GetCurrent(),
                     _colorSelector.GetCurrent()));
-            IsReady = true;
-            _readyText.gameObject.SetActive(true);
         }
 
         private void HandleMoveInput(Vector2 vec)
         {
+            if (!_joined) return;
             if (IsReady) return;
             MoveSelector(vec);
             _playerAccDisplay.sprite = _spriteSelector.GetCurrent();
