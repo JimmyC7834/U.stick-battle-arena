@@ -1,4 +1,6 @@
 using Game.DataSet;
+using Game.UI;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game
@@ -22,6 +24,8 @@ namespace Game
         public int PlayerCount { get; private set; } = MIN_PLAYER_COUNT;
         public SceneID GameplayStageID { get; private set; }
         public GameModeID GameModeID { get; private set; }
+
+        private FlexibleDictionary<PlayerID, PlayerReadyInfo> _playerSettings;
 
         /**
          * Check if the given player id is in the gameplay
@@ -53,6 +57,14 @@ namespace Game
         public void SetGameMode(GameModeID id)
         {
             GameModeID = id;
+        }
+
+        public void SetPlayerSettings(PlayerReadyInfo info)
+        {
+            if (_playerSettings == null)
+                _playerSettings = new FlexibleDictionary<PlayerID, PlayerReadyInfo>();
+
+            _playerSettings[info.PlayerID] = info;
         }
     }
 }
