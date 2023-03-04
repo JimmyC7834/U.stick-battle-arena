@@ -17,9 +17,9 @@ namespace Game
             
             // check if hit a player
             PlayerStat target = col.GetComponent<PlayerStat>();
-            if (target != null)
+            if (target != null && target.ID != attacker)
             {
-                // Deduct health of the hit player
+                // Deduct health of the hit other player
                 target.DeductHealth(
                     new DamageInfo(
                         attacker,

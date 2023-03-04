@@ -170,7 +170,7 @@ MonoBehaviour:
   _velocity: {x: 60, y: 0}
   _gravity: 0
   _projectileID: 7
-  _fireInterval: 0.1
+  _fireInterval: 0.05
 --- !u!1 &7783170079757629830
 GameObject:
   m_ObjectHideFlags: 0
