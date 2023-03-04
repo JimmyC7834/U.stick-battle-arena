@@ -60,8 +60,12 @@ namespace Game
         [SerializeField] protected GameObject _visual;
         [SerializeField] protected AudioID _audioOnUse;
         [SerializeField] protected AudioID _audioOnEquip;
-		[SerializeField] private float _maxTilt = 4;
-        [SerializeField] private float _tiltSpeed = 20;
+		// Controls the max angle the gun can recoil to
+		[SerializeField] private float _maxTilt = 70f;
+		// Controls how fast the player recovers from the recoil
+        [SerializeField] private float _tiltSpeed = 100f;
+		// Controls the angle added to the weapon per shot
+		[SerializeField] private float _recoilAmount = 20f;
 
         private Rigidbody2D _rigidbody;
         private Collider2D _collider;
@@ -174,7 +178,7 @@ namespace Game
          */
         public void ReduceDurability(int value)
         {
-			applyRecoil();
+			ApplyRecoil();
             _durability -= value;
             OnDurabilityChange.Invoke(this);
             if (_durability > 0) return;
@@ -184,19 +188,22 @@ namespace Game
             Reset();
         }
 
-		private void applyRecoil() {
-			_targetAngle = new Vector3(0, 0, _targetAngle.z - 20f);
+		/**
+         * Adds recoil with _maxTilt considered when the gun durability decreases
+         */
+		private void ApplyRecoil() {
+			// 
+			_targetAngle = new Vector3(0, 0, _targetAngle.z - _recoilAmount);
+			if (_targetAngle.z > 0 && _targetAngle.z < (360 - _maxTilt)) _targetAngle.z = 360 - _maxTilt;
 			_visual.transform.rotation = Quaternion.Euler(_targetAngle);
-			// _visual.transform.rotation = _targetAngle;
 		}
 
+		/**
+         * Update in this class controls the smooth recovery from recoil
+         */
 		public void Update() {
             _visual.transform.rotation = Quaternion.RotateTowards(_visual.transform.rotation, Quaternion.Euler(new Vector3(0, 0, 0)), _tiltSpeed * Time.deltaTime);
 			_targetAngle.z = _visual.transform.rotation.eulerAngles.z;
-			if (_targetAngle.z != 0) {
-				Debug.Log(_targetAngle.z);
-			}
-			// _visual.transform.rotation = Quaternion.Euler(_targetAngle);
 		}
 
         public void MakeInvisible()
