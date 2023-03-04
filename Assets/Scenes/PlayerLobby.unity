@@ -4447,8 +4447,8 @@ Camera:
   m_GameObject: {fileID: 2049992403}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4674,8 +4674,8 @@ RectTransform:
   m_GameObject: {fileID: 2075868913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.125, y: 0.16666666, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.25, y: 0.33333328, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 330220836}
   m_RootOrder: 1
@@ -4700,7 +4700,7 @@ MonoBehaviour:
   _image: {fileID: 2075868916}
   _speed: -0.05
   _x: 1
-  _y: 1
+  _y: 2
 --- !u!114 &2075868916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4804,7 +4804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.82318586, g: 0.20914915, b: 0.9433962, a: 1}
+  m_Color: {r: 0.8980392, g: 0.5602069, b: 0.07058823, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
