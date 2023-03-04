@@ -8,6 +8,7 @@ namespace Game
         // GlobalManagers = 1,
         MainMenu = 2,
         MapSelectionMenu = 3,
+        PlayerLobby = 4,
         Farm = 10,
     }
     
