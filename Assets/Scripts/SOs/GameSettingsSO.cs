@@ -1,4 +1,7 @@
+using System.Linq;
 using Game.DataSet;
+using Game.UI;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game
@@ -22,6 +25,15 @@ namespace Game
         public int PlayerCount { get; private set; } = MIN_PLAYER_COUNT;
         public SceneID GameplayStageID { get; private set; }
         public GameModeID GameModeID { get; private set; }
+        public SceneID StageID { get; private set; }
+        public static readonly SceneID[] NON_STAGE_IDS =
+        {
+            SceneID.MainMenu,
+            SceneID.PlayerLobby,
+            SceneID.MapSelectionMenu
+        };
+
+        private FlexibleDictionary<PlayerID, PlayerReadyInfo> _playerSettings;
 
         /**
          * Check if the given player id is in the gameplay
@@ -53,6 +65,26 @@ namespace Game
         public void SetGameMode(GameModeID id)
         {
             GameModeID = id;
+        }
+        
+        public void SetStageID(SceneID id)
+        {
+            if (NON_STAGE_IDS.Contains(id)) return;
+            StageID = id;
+        }
+
+        public void SetPlayerSettings(PlayerReadyInfo info)
+        {
+            if (_playerSettings == null)
+                _playerSettings = new FlexibleDictionary<PlayerID, PlayerReadyInfo>();
+
+            _playerSettings[info.PlayerID] = info;
+        }
+        
+        public PlayerReadyInfo GetPlayerSettings(PlayerID id)
+        {
+            if (!PlayerIDInGameplay(id)) return _playerSettings[0];
+            return _playerSettings[id];
         }
     }
 }
