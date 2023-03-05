@@ -132,8 +132,8 @@ MonoBehaviour:
   _audioOnUse: 13
   _audioOnEquip: 14
   _id: 2
-  _maxDurability: 10
-  _durability: 10
+  _maxDurability: 6
+  _durability: 6
   _damage: 3
   _rayCastRadius: 0.3
   _hitBoxOrigin: {fileID: 3189781468407678171}

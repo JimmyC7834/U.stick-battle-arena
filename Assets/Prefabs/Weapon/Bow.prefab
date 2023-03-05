@@ -136,7 +136,7 @@ MonoBehaviour:
   _maxDurability: 10
   _durability: 10
   _shootingPoint: {fileID: 6693322615751488557}
-  _velocity: {x: 15, y: 15}
+  _velocity: {x: 30, y: 30}
   _gravity: 10
   _projectileID: 2
   _maxPull: 1

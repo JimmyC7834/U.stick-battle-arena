@@ -167,9 +167,10 @@ MonoBehaviour:
   _maxDurability: 2
   _durability: 2
   _shootingPoint: {fileID: 2005636559043271077}
-  _velocity: {x: 100, y: 0}
+  _velocity: {x: 80, y: 0}
   _gravity: 0
   _projectileID: 3
+  _recoilForce: 10
 --- !u!1 &7783170079757629830
 GameObject:
   m_ObjectHideFlags: 0

@@ -136,7 +136,7 @@ MonoBehaviour:
   _maxDurability: 9
   _durability: 3
   _shootingPoint: {fileID: 1822478866356062737}
-  _velocity: {x: 50, y: 0}
+  _velocity: {x: 40, y: 0}
   _gravity: 0
   _projectileID: 5
   _bulletNumber: 3
