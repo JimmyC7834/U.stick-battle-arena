@@ -13,6 +13,7 @@ namespace Game.Player
         [SerializeField] private SpriteRenderer _accessoryDisplay;
         [SerializeField] private SpriteRenderer _playerDisplay;
         [SerializeField] private ParticleSystem _playerDust;
+        [SerializeField] private ParticleSystem _playerDeath;
         private PlayerMovement _playerMovement;
         private PlayerStat _playerStat;
 
@@ -26,7 +27,13 @@ namespace Game.Player
             _playerStat = GetComponent<PlayerStat>();
             _playerMovement.OnMovement += HandleMovementVisual;
             _playerStat.OnRespawn += PlayFlashEffect;
-            _playerStat.OnDeath += (_) => _playerDust.Stop();
+            _playerStat.OnDeath += (_) =>
+            {
+                _playerDust.Stop();
+                GameObject deathEffect = Instantiate(_playerDeath, transform).gameObject;
+                deathEffect.transform.position = transform.position;
+                deathEffect.transform.SetParent(null);
+            };
             _playerDust.Stop();
         }
 

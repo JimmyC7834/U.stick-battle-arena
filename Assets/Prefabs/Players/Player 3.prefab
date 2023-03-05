@@ -489,6 +489,7 @@ MonoBehaviour:
   _accessoryDisplay: {fileID: 7430625117328125634}
   _playerDisplay: {fileID: 4044784412276161191}
   _playerDust: {fileID: 8661098220426599011}
+  _playerDeath: {fileID: 5659693843659247517, guid: fcab428a863f21046a8183b1051733cc, type: 3}
   _flashTime: 2
   _flashRate: 4
 --- !u!1 &4044784413256975038
