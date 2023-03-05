@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game
 {
@@ -10,6 +12,8 @@ namespace Game
     // [CreateAssetMenu(menuName = "Game/GameplayService", fileName = "GameplayService")]
     public class GameplayService : ScriptableObject
     {
+        public event UnityAction OnPause = () => { };
+        public event UnityAction OnContinue = () => { };
         public ProjectileManager ProjectileManager { get; private set; }
         public UsableItemManager UsableItemManager { get; private set; }
         public PlayerManager PlayerManager { get; private set; }
@@ -41,6 +45,18 @@ namespace Game
         public void ProvideGameplayUIManager(GameplayUIManager gameplayUIManager)
         {
             GameplayUIManager = gameplayUIManager;
+        }
+
+        /**
+         * Other functions
+         */
+        public void PauseGameplay() => OnPause.Invoke();
+        public void ContinueGameplay() => OnContinue.Invoke();
+
+        private void OnEnable()
+        {
+            OnPause = () => { };
+            OnContinue = () => { };
         }
     }
 }
