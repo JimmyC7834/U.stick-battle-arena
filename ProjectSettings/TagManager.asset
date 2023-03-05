@@ -62,3 +62,6 @@ TagManager:
   - name: TileMapBlock
     uniqueID: 1279688161
     locked: 0
+  - name: UI
+    uniqueID: 2637431999
+    locked: 0
