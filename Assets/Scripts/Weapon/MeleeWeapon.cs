@@ -12,6 +12,8 @@ namespace Game
 
         protected void Attack(PlayerID attacker)
         {
+            _service.AudioManager.PlayAudio(_audioOnUse);
+            ReduceDurability(1);
             Collider2D col = Physics2D.OverlapCircle(_hitBoxOrigin.position, _rayCastRadius);
             if (col == null) return;
             
@@ -27,9 +29,6 @@ namespace Game
                         _damage,
                         this));
             }
-            
-            _service.AudioManager.PlayAudio(_audioOnUse);
-            ReduceDurability(1);
         }
     }
 }
