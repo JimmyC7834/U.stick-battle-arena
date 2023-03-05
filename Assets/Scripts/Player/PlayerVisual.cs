@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Game.UI;
 using UnityEngine;
 
@@ -13,11 +14,19 @@ namespace Game.Player
         [SerializeField] private SpriteRenderer _playerDisplay;
         [SerializeField] private ParticleSystem _playerDust;
         private PlayerMovement _playerMovement;
+        private PlayerStat _playerStat;
+
+        [Header("Flash Effect Settings")]
+        [SerializeField] private float _flashTime;
+        [SerializeField] private float _flashRate;
 
         private void Awake()
         {
             _playerMovement = GetComponent<PlayerMovement>();
+            _playerStat = GetComponent<PlayerStat>();
             _playerMovement.OnMovement += HandleMovementVisual;
+            _playerStat.OnRespawn += PlayFlashEffect;
+            _playerStat.OnDeath += (_) => _playerDust.Stop();
             _playerDust.Stop();
         }
 
@@ -37,6 +46,28 @@ namespace Game.Player
             }
             
             _playerDust.Stop();
+        }
+
+        private void PlayFlashEffect()
+        {
+            StartCoroutine(FlashingEffect());
+        }
+        
+        private IEnumerator FlashingEffect()
+        {
+            float timer = Time.time;
+            Color originalC = _playerDisplay.color;
+            while (Time.time - timer < _flashTime)
+            {
+                yield return null;
+                Color c = _playerDisplay.color;
+                float r = (Time.time - timer) % (1 / _flashRate);
+                c.a = (r > 1/ (2 * _flashRate)) ? 1 : 0;
+                _playerDisplay.color = c;
+                Debug.Log(c.a);
+            }
+
+            _playerDisplay.color = originalC;
         }
     }
 }

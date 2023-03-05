@@ -1,3 +1,4 @@
+using System.Collections;
 using Game.Player;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Game
         
         [SerializeField] private GameplayService _service;
         [SerializeField] private PlayerID _playerID;
+        [SerializeField] private float _spawnDelay;
         private PlayerStat _playerStat;
 
         public void Initialize(PlayerStat playerStat)
@@ -23,7 +25,14 @@ namespace Game
          */
         private void Respawn(int _)
         {
+            StartCoroutine(RespawnDelay());
+        }
+
+        private IEnumerator RespawnDelay()
+        {
+            yield return new WaitForSecondsRealtime(_spawnDelay);
             _playerStat.transform.position = transform.position;
+            _playerStat.Respawn();
         }
     }
 }

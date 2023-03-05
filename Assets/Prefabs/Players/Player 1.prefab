@@ -405,6 +405,8 @@ MonoBehaviour:
   _accessoryDisplay: {fileID: 7129151357793546732}
   _playerDisplay: {fileID: 4044784412276161191}
   _playerDust: {fileID: 8435034149944138615}
+  _flashTime: 2
+  _flashRate: 4
 --- !u!1 &4044784413256975038
 GameObject:
   m_ObjectHideFlags: 0
