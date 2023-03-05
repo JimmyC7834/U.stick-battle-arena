@@ -129,8 +129,8 @@ MonoBehaviour:
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
   _icon: {fileID: 21300000, guid: e58845b5286681b4289f25a381435480, type: 3}
   _visual: {fileID: 4961244622899746949}
-  _audioOnUse: 0
-  _audioOnEquip: 0
+  _audioOnUse: 13
+  _audioOnEquip: 14
   _id: 2
   _maxDurability: 10
   _durability: 10

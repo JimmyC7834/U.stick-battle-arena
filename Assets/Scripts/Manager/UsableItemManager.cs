@@ -16,14 +16,17 @@ namespace Game
         SMG = 5,
         Shotgun = 6,
         HandGrenade = 7,
+        Minigun = 8,
+        FlameThrower = 9,
     }
 
     public class UsableItemManager : MonoBehaviour
     {
         public static readonly UsableItemID[] UsableItemIDs =
         {
-            UsableItemID.Bow, UsableItemID.Dagger, UsableItemID.Pistol,
-            UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade, UsableItemID.SMG
+            UsableItemID.Bow, UsableItemID.Dagger, UsableItemID.Pistol, 
+            UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade,
+            UsableItemID.SMG, UsableItemID.Minigun, UsableItemID.FlameThrower,
         };
 
         public event UnityAction OnReturnUsableItem = () => { };

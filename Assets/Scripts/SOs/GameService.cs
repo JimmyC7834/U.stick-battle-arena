@@ -5,6 +5,7 @@ namespace Game
     [CreateAssetMenu]
     public class GameService : ScriptableObject
     {
+        [SerializeField] private GameSettingsSO _gameSettings;
         public AudioManager AudioManager { get; private set; }
         public SceneManager SceneManager { get; private set; }
 
@@ -16,6 +17,11 @@ namespace Game
         public void ProvideSceneManager(SceneManager _sceneManager)
         {
             SceneManager = _sceneManager;
+        }
+
+        public void GameStart()
+        {
+            SceneManager.LoadScene(_gameSettings.StageID);
         }
     }
 }
