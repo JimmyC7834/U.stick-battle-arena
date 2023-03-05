@@ -112,9 +112,9 @@ namespace Game
         /**
          * Increase the remaining life of the given player by 1.
          */
-        public void IncreaseRemainingLife(PlayerID id)
+        public void IncreaseRemainingLife(PlayerID id, int val)
         {
-            _remainingLife[id]++;
+            _remainingLife[id] += val;
             Debug.Log($"{id} got {GetRemainingLife(id)} life(s) left");
         }
 
