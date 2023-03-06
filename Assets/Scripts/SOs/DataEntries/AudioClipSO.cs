@@ -33,8 +33,10 @@ namespace Game
         Walk4 = 18,
         Click1 = 19,
         Click2 = 20,
-        Select = 21,
-        Jump = 22,
+        Jump = 21,
+        Select1 = 22,
+        Select2 = 23,
+        Pause = 24,
     }
     
     [CreateAssetMenu(menuName = "Game/DataEntry/AudioClip")]

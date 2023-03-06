@@ -13,12 +13,14 @@ namespace Game
         
         public void LoadMap1()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Click1);
             _gameSettings.SetGameplayStageID(SceneID.Farm);
             _gameService.SceneManager.LoadScene(_gameSettings.GameplayStageID);
         }
         
         public void LoadMap2()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Click1);
             _gameSettings.SetGameplayStageID(SceneID.Farm);
             _gameService.SceneManager.LoadScene(_gameSettings.GameplayStageID);
         }

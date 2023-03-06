@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fb59846d8c0e02479e0c80cc13c8f5c, type: 3}
-  m_Name: Jump
+  m_Name: Pause
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 128f9d6c20182ee4a9c7f3c3c9b580ca, type: 3}
-  _id: 21
+  _audioClip: {fileID: 8300000, guid: e3153fe9612ff7a489b604193a20e158, type: 3}
+  _id: 20
   _defaultSetting:
     _pitch: 1
-    _volume: 0.3
+    _volume: 1
     _loop: 0
