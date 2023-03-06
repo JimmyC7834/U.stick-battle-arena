@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 
 
-namespace Game
+namespace Game.Stage
 {
     /*
     * Basic JumpPad script that cancels y-axis velocity and applies y-axis force to rigid bodies upon collision
