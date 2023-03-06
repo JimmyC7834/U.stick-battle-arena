@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Game.UI;
 using UnityEngine;
 
@@ -71,7 +70,6 @@ namespace Game.Player
                 float r = (Time.time - timer) % (1 / _flashRate);
                 c.a = (r > 1/ (2 * _flashRate)) ? 1 : 0;
                 _playerDisplay.color = c;
-                Debug.Log(c.a);
             }
 
             _playerDisplay.color = originalC;

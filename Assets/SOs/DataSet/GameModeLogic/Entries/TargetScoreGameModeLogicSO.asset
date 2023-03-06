@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ae225e9365b4f56b878fb47674eed87, type: 3}
-  m_Name: HighScoreGameModeLogicSO
+  m_Name: TargetScoreGameModeLogicSO
   m_EditorClassIdentifier: 
   _id: 1
   _gameSettings: {fileID: 11400000, guid: 20164ed21e2c1374585f0d83457de296, type: 2}
