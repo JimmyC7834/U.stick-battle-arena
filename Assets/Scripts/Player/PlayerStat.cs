@@ -1,5 +1,9 @@
+#region
+
 using UnityEngine;
 using UnityEngine.Events;
+
+#endregion
 
 namespace Game.Player
 {
@@ -20,6 +24,7 @@ namespace Game.Player
          * 1st arg: id of the player
          */
         public event UnityAction<int> OnDeath = delegate { }; 
+        public event UnityAction OnRespawn = delegate { }; 
         
         /**
          * Invoked when health of a player change
@@ -63,7 +68,8 @@ namespace Game.Player
         private void CheckDeath()
         {
             if (_health > 0) return;
-        
+            gameObject.SetActive(false);
+
             _service.AudioManager.PlayAudio(AudioID.Death);
             // reset the health
             _health = _maxHealth;
@@ -74,6 +80,12 @@ namespace Game.Player
             // reduce the remaining life of the player
             _service.PlayerManager.ReduceRemainingLife(ID);
             OnDeath.Invoke(_service.PlayerManager.GetRemainingLife(ID));
+        }
+
+        public void Respawn()
+        {
+            gameObject.SetActive(true);
+            OnRespawn.Invoke();
         }
     }
 
@@ -104,6 +116,15 @@ namespace Game.Player
             Target = target;
             Damage = damage;
             _source = (usableItem, null);
+        }
+        
+        public DamageInfo(
+            PlayerID dealer, PlayerID target, int damage)
+        {
+            Dealer = dealer;
+            Target = target;
+            Damage = damage;
+            _source = (null, null);
         }
     }
 }

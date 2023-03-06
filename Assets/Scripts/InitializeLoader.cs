@@ -1,6 +1,8 @@
-using UnityEditor;
+#region
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
+#endregion
 
 namespace Game
 {

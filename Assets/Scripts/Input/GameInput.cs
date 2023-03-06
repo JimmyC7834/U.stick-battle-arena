@@ -24,31 +24,13 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     ""name"": ""GameInput"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""Menu"",
             ""id"": ""ceb7ef42-ac08-4f6e-b6f0-bd77925e2798"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
-                    ""type"": ""Value"",
-                    ""id"": ""8ce52457-1fbe-4d60-ae68-18111973aace"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""UseItem"",
+                    ""name"": ""Esc"",
                     ""type"": ""Button"",
-                    ""id"": ""3be9d1f6-dc61-415f-a38d-5e6410b536ce"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SwitchItem"",
-                    ""type"": ""Button"",
-                    ""id"": ""5260de83-9524-4d56-b490-c6206e5822f4"",
+                    ""id"": ""0507574d-ce3f-416c-85e2-e71269b71a7c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -57,79 +39,13 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""62658c3e-af37-4058-8738-1d13edfaa2ae"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Up"",
-                    ""id"": ""a737b894-5bd5-41e6-8596-5e24a1a987a4"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Down"",
-                    ""id"": ""ce5aee05-9da7-4309-90f5-7854120b5924"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Left"",
-                    ""id"": ""067ebc95-6fe4-4659-b3f3-10928ef01e17"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Right"",
-                    ""id"": ""32a8aa14-e336-4f0b-b1f3-f10ab6c86077"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
-                    ""id"": ""98c15de3-2ce0-4020-859a-f61c8d0a7b83"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""id"": ""73dea39a-17da-46af-85de-62ec3ead8b3d"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UseItem"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ec0ebe29-6d17-41bb-9fb6-9fca6a5912bf"",
-                    ""path"": ""<Keyboard>/k"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SwitchItem"",
+                    ""action"": ""Esc"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -138,11 +54,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
-        m_Player_UseItem = m_Player.FindAction("UseItem", throwIfNotFound: true);
-        m_Player_SwitchItem = m_Player.FindAction("SwitchItem", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_Esc = m_Menu.FindAction("Esc", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -199,58 +113,40 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Movement;
-    private readonly InputAction m_Player_UseItem;
-    private readonly InputAction m_Player_SwitchItem;
-    public struct PlayerActions
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_Esc;
+    public struct MenuActions
     {
         private @GameInput m_Wrapper;
-        public PlayerActions(@GameInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Player_Movement;
-        public InputAction @UseItem => m_Wrapper.m_Player_UseItem;
-        public InputAction @SwitchItem => m_Wrapper.m_Player_SwitchItem;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public MenuActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Esc => m_Wrapper.m_Menu_Esc;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
             {
-                @Movement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                @Movement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                @Movement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                @UseItem.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseItem;
-                @UseItem.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseItem;
-                @UseItem.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUseItem;
-                @SwitchItem.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchItem;
-                @SwitchItem.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchItem;
-                @SwitchItem.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchItem;
+                @Esc.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnEsc;
+                @Esc.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnEsc;
+                @Esc.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnEsc;
             }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Movement.started += instance.OnMovement;
-                @Movement.performed += instance.OnMovement;
-                @Movement.canceled += instance.OnMovement;
-                @UseItem.started += instance.OnUseItem;
-                @UseItem.performed += instance.OnUseItem;
-                @UseItem.canceled += instance.OnUseItem;
-                @SwitchItem.started += instance.OnSwitchItem;
-                @SwitchItem.performed += instance.OnSwitchItem;
-                @SwitchItem.canceled += instance.OnSwitchItem;
+                @Esc.started += instance.OnEsc;
+                @Esc.performed += instance.OnEsc;
+                @Esc.canceled += instance.OnEsc;
             }
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
-    public interface IPlayerActions
+    public MenuActions @Menu => new MenuActions(this);
+    public interface IMenuActions
     {
-        void OnMovement(InputAction.CallbackContext context);
-        void OnUseItem(InputAction.CallbackContext context);
-        void OnSwitchItem(InputAction.CallbackContext context);
+        void OnEsc(InputAction.CallbackContext context);
     }
 }

@@ -1,15 +1,12 @@
-using UnityEngine;
-
 namespace Game.DataSet
 {
     public enum GameModeID
     {
-        HighestScore,
-        BattleRoyal,
-        HighestKills,
+        BattleRoyal = 0,
+        TargetScore = 1,
+        HighestScore = 2,
+        HighestKills = 3,
     }
     
-    [CreateAssetMenu(menuName = "Game/DataSet/GameModeLogic")]
     public class GameModeLogicDataSetSO : DataSetSO<GameModeID, GameModeLogicSO> { }
-    
 }

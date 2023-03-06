@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: GameModeLogicDataSet
   m_EditorClassIdentifier: 
   _dataEntry:
+  - {fileID: 11400000, guid: e7fd3bdbd6f85924bb212548187f4ce4, type: 2}
   - {fileID: 11400000, guid: f1376158497deef48a46b5802f007934, type: 2}
