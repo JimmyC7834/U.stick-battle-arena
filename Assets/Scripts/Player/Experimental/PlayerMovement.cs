@@ -48,6 +48,11 @@ namespace Game.Player
 		//Wall Jump
 		private float _wallJumpStartTime;
 		private int _lastWallJumpDir;
+		
+		// Audio
+		private bool _playWalking;
+		private float _playWalkingTime;
+		private float _playWalkingInterval = 0.3f;
 
 		private Vector2 _moveInput;
 		public float LastPressedJumpTime { get; private set; }
@@ -116,12 +121,21 @@ namespace Game.Player
 		{
 			_moveInput = vec;
 			if (_moveInput.x != 0)
+			{
 				CheckDirectionToFace(_moveInput.x < 0);
+				_playWalkingTime = 0;
+				_playWalking = true;
+			}
+			else
+			{
+				_playWalking = false;
+			}
 		
 		
 			if(_moveInput.y > 0 && !IsJumping)
 			{
 				OnJumpInput();
+				_service.AudioManager.PlayAudio(AudioID.Jump);
 			}
 
 			if (_moveInput.y == 0 && IsJumping)
@@ -253,6 +267,22 @@ namespace Game.Player
 			{
 				//Default gravity if standing on a platform or moving upwards
 				SetGravityScale(Data.gravityScale);
+			}
+			#endregion
+			
+			#region AUDIO
+
+			if (_playWalking && !IsJumping && RB.velocity.y == 0)
+			{
+				if (_playWalkingTime > 0)
+				{
+					_playWalkingTime -= Time.deltaTime;
+				}
+				else
+				{
+					_playWalkingTime = _playWalkingInterval;
+					_service.AudioManager.PlayFootstep();
+				}
 			}
 			#endregion
 		}

@@ -27,6 +27,14 @@ namespace Game
         BowSwitch = 12,
         DaggerUse = 13,
         DaggerSwitch = 14,
+        Walk1 = 15,
+        Walk2 = 16,
+        Walk3 = 17,
+        Walk4 = 18,
+        Click1 = 19,
+        Click2 = 20,
+        Select = 21,
+        Jump = 22,
     }
     
     [CreateAssetMenu(menuName = "Game/DataEntry/AudioClip")]
