@@ -1,6 +1,10 @@
+#region
+
 using System.Collections;
 using Game.Player;
 using UnityEngine;
+
+#endregion
 
 namespace Game
 {
