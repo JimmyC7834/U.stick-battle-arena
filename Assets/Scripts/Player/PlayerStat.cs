@@ -104,5 +104,14 @@ namespace Game.Player
             Damage = damage;
             _source = (usableItem, null);
         }
+        
+        public DamageInfo(
+            PlayerID dealer, PlayerID target, int damage)
+        {
+            Dealer = dealer;
+            Target = target;
+            Damage = damage;
+            _source = (null, null);
+        }
     }
 }
