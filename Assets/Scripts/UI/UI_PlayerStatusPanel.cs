@@ -1,5 +1,9 @@
+#region
+
 using UnityEngine;
 using UnityEngine.Assertions;
+
+#endregion
 
 namespace Game.UI
 {
