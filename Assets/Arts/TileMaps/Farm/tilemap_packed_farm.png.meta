@@ -49,7 +49,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -2467,9 +2467,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      tilemap_packed_farm_74: -1270493288
       tilemap_packed_farm_5: 657032313
       tilemap_packed_farm_27: -304533756
-      tilemap_packed_farm_108: -662004354
       tilemap_packed_farm_46: 1253155561
       tilemap_packed_farm_8: -2016034931
       tilemap_packed_farm_62: -1288980678
@@ -2575,10 +2575,10 @@ TextureImporter:
       tilemap_packed_farm_47: 2141548698
       tilemap_packed_farm_79: 332748664
       tilemap_packed_farm_16: 657280672
-      tilemap_packed_farm_29: 502108264
-      tilemap_packed_farm_74: -1270493288
+      tilemap_packed_farm_108: -662004354
       tilemap_packed_farm_25: -529545642
       tilemap_packed_farm_10: 1879660139
+      tilemap_packed_farm_29: 502108264
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
