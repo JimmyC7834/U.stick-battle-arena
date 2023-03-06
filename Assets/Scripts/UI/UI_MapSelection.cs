@@ -35,8 +35,7 @@ namespace Game
 
         public void RandomSelect()
         {
-            _gameSettings.SetGameplayStageID(
-                _mapButtons[Random.Range(0, _mapButtons.Length)].SceneID);
+            SetStage(_mapButtons[Random.Range(0, _mapButtons.Length)]);
         }
         
         public void GameStart()
