@@ -1,13 +1,15 @@
 using System;
+using System.Drawing;
 using Game.Player;
 using UnityEngine;
 
 namespace Game
 {
-    public class Thorn : Projectile
+    public class Mine : Projectile
     {
         [SerializeField] private float _durationTime;
         [SerializeField] private float _thrust;
+        [SerializeField] private float _splashRadius;
 
         private float _currTime;
         private Rigidbody2D _rigidbody;
@@ -15,7 +17,7 @@ namespace Game
         private void Start()
         {
             OnHitStage += Stick;
-            OnHitPlayer += DealDamage;
+            OnHitPlayer += (_) => Explode();
             
             _rigidbody = GetComponent<Rigidbody2D>();
             _currTime = _durationTime;
@@ -41,18 +43,28 @@ namespace Game
             _hit = false; // let the collider still active to detect collision
         }
 
-        private void DealDamage(DamageInfo damageInfo)
+        private void Explode()
         {
-            // Increase score of the dealer if hit
-            if (damageInfo.Target != damageInfo.Dealer)
-                _service.PlayerManager.IncreaseScore(damageInfo.Dealer, _score);
-            // Deduct health of the hit player
-            _service.PlayerManager.
-                GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
-            
-            KnockBack(damageInfo);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(
+                transform.position, 
+                _splashRadius);
+            Debug.Log(hits);
+            foreach (Collider2D hit in hits)
+            {
+                PlayerStat player = hit.GetComponent<PlayerStat>();
+                if (player == null) continue;
+                
+                DamageInfo damageInfo = CreateDamageInfo(player.ID);
+                // Deduct health of the player
+                if (damageInfo.Target != damageInfo.Dealer)
+                    _service.PlayerManager.IncreaseScore(damageInfo.Dealer, _score);
 
-            _hit = false;
+                _service.PlayerManager.
+                    GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
+                
+                KnockBack(damageInfo);
+            }
+            ReturnToPool();
         }
 
         private void KnockBack(DamageInfo damageInfo)
