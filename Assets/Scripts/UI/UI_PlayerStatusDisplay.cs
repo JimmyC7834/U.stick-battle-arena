@@ -15,6 +15,9 @@ namespace Game.UI
         [SerializeField] private Image _healthBar;
         [SerializeField] private Image _itemDurabilityBar;
         [SerializeField] private Image _itemIcon;
+        [SerializeField] private Image _currItemIcon;
+        [SerializeField] private Image _playerDisplay;
+        [SerializeField] private Image _playerAcc;
 
         [SerializeField] private PlayerID _playerID;
         
@@ -38,13 +41,14 @@ namespace Game.UI
             playerInventory.OnItemSwitch += UpdateInventoryIcon;
             playerInventory.OnItemEquip += HookToItemDurabilityChange;
             playerInventory.OnItemHold += UnHookToItemDurabilityChange;
+            playerInventory.OnItemPick += UpdateEquipItemIcon;
             
             _service.PlayerManager.OnScoreChange += UpdateScore;
         }
 
         private void UpdateHealthBarVisual(PlayerStat playerStat)
         {
-            _healthBar.fillAmount = playerStat.HealthPercentage * 0.5f;
+            _healthBar.fillAmount = playerStat.HealthPercentage;
         }
 
         private void HookToItemDurabilityChange(PlayerInventory inventory)
@@ -60,20 +64,34 @@ namespace Game.UI
 
         private void UpdateDurabilityBar(UsableItem item)
         {
-            _itemDurabilityBar.fillAmount = item.DurabilityPercent * 0.5f;
+            _itemDurabilityBar.fillAmount = item.DurabilityPercent;
+        }
+
+        private void UpdateEquipItemIcon(PlayerInventory inventory)
+        {
+            if (inventory.EquippedItem != null)
+            {
+                _currItemIcon.gameObject.SetActive(true);
+                _currItemIcon.sprite = inventory.EquippedItem.Icon;
+            }
+            else
+            {
+                _currItemIcon.gameObject.SetActive(false);
+            }
         }
         
-        // TODO : rework on inventory icon, currently coded for demo
         private void UpdateInventoryIcon(PlayerInventory inventory)
         {
-            if (inventory.HeldItem == null)
+            UpdateEquipItemIcon(inventory);
+            if (inventory.HeldItem != null)
+            {
+                _itemIcon.gameObject.SetActive(true);
+                _itemIcon.sprite = inventory.HeldItem.Icon;
+            }
+            else
             {
                 _itemIcon.gameObject.SetActive(false);
-                return;
             }
-            
-            _itemIcon.gameObject.SetActive(true);
-            _itemIcon.sprite = inventory.HeldItem.Icon;
         }
         
         private void UpdateLifeCountVisual(int lifeCount)

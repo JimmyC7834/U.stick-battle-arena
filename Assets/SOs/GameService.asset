@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25f1ad8e8c24a109c71111558218aab, type: 3}
   m_Name: GameService
   m_EditorClassIdentifier: 
-  _audioManager: {fileID: 0}
+  _gameSettings: {fileID: 11400000, guid: 20164ed21e2c1374585f0d83457de296, type: 2}
