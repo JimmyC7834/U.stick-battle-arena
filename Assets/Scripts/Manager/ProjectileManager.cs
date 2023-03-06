@@ -15,6 +15,7 @@ namespace Game
         ShotgunBullet = 5,
         Grenade = 6,
         MinigunBullet = 7,
+        Thorn = 8,
     }
 
     /**
@@ -27,6 +28,7 @@ namespace Game
             ProjectileID.Arrow, ProjectileID.Grenade, 
             ProjectileID.PistolBullet, ProjectileID.ShotgunBullet, 
             ProjectileID.SniperBullet, ProjectileID.SMGBullet, ProjectileID.MinigunBullet,
+            ProjectileID.Thorn,
         };
         
         private Dictionary<ProjectileID, ProjectilePool> _poolMap;

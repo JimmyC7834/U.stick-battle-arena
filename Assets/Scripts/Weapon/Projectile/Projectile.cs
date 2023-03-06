@@ -89,6 +89,7 @@ namespace Game
 
         private void OnTriggerEnter2D(Collider2D col)
         {
+            Debug.Log("hit");
             // if already hit something, ignore rest of the collision
             if (_hit) return;
             if (!isActiveAndEnabled) return;

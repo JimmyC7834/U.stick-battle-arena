@@ -18,6 +18,7 @@ namespace Game
         HandGrenade = 7,
         Minigun = 8,
         FlameThrower = 9,
+        ThornItem = 10,
     }
 
     public class UsableItemManager : MonoBehaviour
@@ -27,6 +28,7 @@ namespace Game
             UsableItemID.Bow, UsableItemID.Dagger, UsableItemID.Pistol, 
             UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade,
             UsableItemID.SMG, UsableItemID.Minigun, UsableItemID.FlameThrower,
+            UsableItemID.ThornItem,
         };
 
         public event UnityAction OnReturnUsableItem = () => { };
