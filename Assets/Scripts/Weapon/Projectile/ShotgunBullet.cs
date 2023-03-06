@@ -1,5 +1,8 @@
+#region
+
 using Game.Player;
-using UnityEngine;
+
+#endregion
 
 namespace Game
 {
@@ -30,7 +33,13 @@ namespace Game
         {
             // does not return to pool if collide with shotgun bullets
             if (other.gameObject.GetComponent<ShotgunBullet>() == null)
+            {
                 ReturnToPool();
+            }
+            else
+            {
+                _hit = false;
+            }
         }
     }
 }

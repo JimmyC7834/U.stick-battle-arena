@@ -1,6 +1,10 @@
+#region
+
 using System.Collections;
 using Game.Player;
 using UnityEngine;
+
+#endregion
 
 namespace Game
 {
@@ -15,20 +19,20 @@ namespace Game
         [SerializeField] private float _rayCastRadius;
         [SerializeField] private Transform _hitBoxOrigin;
 
-        protected virtual void Attack(PlayerID attacker)
+        protected void Attack(PlayerID attacker)
         {
-            if (IsAvailable == false)
-            {
-                return;
-            }
+            if (IsAvailable == false) return;
+            _service.AudioManager.PlayAudio(_audioOnUse);
+            ReduceDurability(1);
+            
             Collider2D col = Physics2D.OverlapCircle(_hitBoxOrigin.position, _rayCastRadius);
             if (col == null) return;
             
             // check if hit a player
             PlayerStat target = col.GetComponent<PlayerStat>();
-            if (target != null)
+            if (target != null && target.ID != attacker)
             {
-                // Deduct health of the hit player
+                // Deduct health of the hit other player
                 target.DeductHealth(
                     new DamageInfo(
                         attacker,

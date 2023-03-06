@@ -1,6 +1,9 @@
-using System;
+#region
+
 using Game.Player;
 using UnityEngine;
+
+#endregion
 
 namespace Game
 {
@@ -10,32 +13,24 @@ namespace Game
         
         private void Start()
         {
-            OnHitPlayer += HandleHitPlayer;
+            OnHitPlayer += (_) => Explode();
             OnHitStage += Explode;
         }
 
-        private void HandleHitPlayer(DamageInfo damageInfo)
-        {
-            if (damageInfo.Dealer == damageInfo.Target) return;
-
-            // Increase score of the dealer if hit
-            _service.PlayerManager.IncreaseScore(damageInfo.Dealer, _score);
-            // Deduct health of the hit player
-            _service.PlayerManager.
-                GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
-            ReturnToPool();
-        }
-        
         private void Explode()
         {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, _splashRadius);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(
+                transform.position, 
+                _splashRadius);
             foreach (Collider2D hit in hits)
             {
                 PlayerStat player = hit.GetComponent<PlayerStat>();
-                if (player != null) continue;
+                if (player == null) continue;
                 
                 DamageInfo damageInfo = CreateDamageInfo(player.ID);
                 // Deduct health of the player
+                if (damageInfo.Dealer != damageInfo.Target)
+                    _service.PlayerManager.IncreaseScore(damageInfo.Dealer, _score);
                 _service.PlayerManager.
                     GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
             }

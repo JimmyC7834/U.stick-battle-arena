@@ -114,7 +114,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""440c24d8-a6b6-4b68-913a-528d7f91b8fe"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -125,7 +125,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f4e5231a-945e-4c7c-8b05-bd00c14cf117"",
-                    ""path"": ""<Keyboard>/g"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -226,7 +226,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e5be14dd-74e4-439d-bde0-d9d9ec98f1d2"",
-                    ""path"": ""<Keyboard>/comma"",
+                    ""path"": ""<Keyboard>/rightShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -237,7 +237,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""daa16113-d37e-48c6-b080-58f35b496c33"",
-                    ""path"": ""<Keyboard>/period"",
+                    ""path"": ""<Keyboard>/rightCtrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -294,7 +294,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""e1318169-71b4-496e-8cbe-40048432989a"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -305,7 +305,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""1c08399d-c109-45fa-9d6d-397e683e1829"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/h"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -316,7 +316,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""9daec68c-1d9d-46b7-b250-41da352d0504"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/g"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -327,7 +327,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""8a70fc5b-7854-4331-8633-a9438c2f395b"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -338,7 +338,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9ca6a5f3-e74b-4933-bbe0-be7b82fcff3a"",
-                    ""path"": ""<Keyboard>/comma"",
+                    ""path"": ""<Keyboard>/v"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -349,6 +349,118 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""22635dff-116b-4fb2-8fce-35bdd2f88d24"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player4"",
+            ""id"": ""b686e67c-2517-498d-96ab-eef80049f301"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""f32f29fc-2209-4825-8c98-bf6c5460e930"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""UseItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""dddf20c2-4ffe-4e81-8773-7e606ee64906"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""8293180f-2108-4edd-bdab-45c3371923ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""1d853143-771a-4f1a-aa47-7bfac9580d06"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""361ea264-135e-4e82-83ae-46452acfa5df"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""81fa049a-4b57-4d51-9e26-7ed43099c37d"",
+                    ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9b8569e6-dee2-4fa1-9329-cb088613d0bf"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8cab94e4-ed15-4737-8d01-6e879675dad1"",
+                    ""path"": ""<Keyboard>/quote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d8db93a-4dbc-4f54-8226-9d3eb45453aa"",
+                    ""path"": ""<Keyboard>/comma"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1fd488b1-4ddf-4bb9-93ae-25c17ed2dcf5"",
                     ""path"": ""<Keyboard>/period"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -389,6 +501,11 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player3_Movement = m_Player3.FindAction("Movement", throwIfNotFound: true);
         m_Player3_UseItem = m_Player3.FindAction("UseItem", throwIfNotFound: true);
         m_Player3_SwitchItem = m_Player3.FindAction("SwitchItem", throwIfNotFound: true);
+        // Player4
+        m_Player4 = asset.FindActionMap("Player4", throwIfNotFound: true);
+        m_Player4_Movement = m_Player4.FindAction("Movement", throwIfNotFound: true);
+        m_Player4_UseItem = m_Player4.FindAction("UseItem", throwIfNotFound: true);
+        m_Player4_SwitchItem = m_Player4.FindAction("SwitchItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -591,6 +708,55 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public Player3Actions @Player3 => new Player3Actions(this);
+
+    // Player4
+    private readonly InputActionMap m_Player4;
+    private IPlayer4Actions m_Player4ActionsCallbackInterface;
+    private readonly InputAction m_Player4_Movement;
+    private readonly InputAction m_Player4_UseItem;
+    private readonly InputAction m_Player4_SwitchItem;
+    public struct Player4Actions
+    {
+        private @PlayerInput m_Wrapper;
+        public Player4Actions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Player4_Movement;
+        public InputAction @UseItem => m_Wrapper.m_Player4_UseItem;
+        public InputAction @SwitchItem => m_Wrapper.m_Player4_SwitchItem;
+        public InputActionMap Get() { return m_Wrapper.m_Player4; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player4Actions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer4Actions instance)
+        {
+            if (m_Wrapper.m_Player4ActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_Player4ActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_Player4ActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_Player4ActionsCallbackInterface.OnMovement;
+                @UseItem.started -= m_Wrapper.m_Player4ActionsCallbackInterface.OnUseItem;
+                @UseItem.performed -= m_Wrapper.m_Player4ActionsCallbackInterface.OnUseItem;
+                @UseItem.canceled -= m_Wrapper.m_Player4ActionsCallbackInterface.OnUseItem;
+                @SwitchItem.started -= m_Wrapper.m_Player4ActionsCallbackInterface.OnSwitchItem;
+                @SwitchItem.performed -= m_Wrapper.m_Player4ActionsCallbackInterface.OnSwitchItem;
+                @SwitchItem.canceled -= m_Wrapper.m_Player4ActionsCallbackInterface.OnSwitchItem;
+            }
+            m_Wrapper.m_Player4ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @UseItem.started += instance.OnUseItem;
+                @UseItem.performed += instance.OnUseItem;
+                @UseItem.canceled += instance.OnUseItem;
+                @SwitchItem.started += instance.OnSwitchItem;
+                @SwitchItem.performed += instance.OnSwitchItem;
+                @SwitchItem.canceled += instance.OnSwitchItem;
+            }
+        }
+    }
+    public Player4Actions @Player4 => new Player4Actions(this);
     private int m_PrototypeSchemeIndex = -1;
     public InputControlScheme PrototypeScheme
     {
@@ -613,6 +779,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnSwitchItem(InputAction.CallbackContext context);
     }
     public interface IPlayer3Actions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnUseItem(InputAction.CallbackContext context);
+        void OnSwitchItem(InputAction.CallbackContext context);
+    }
+    public interface IPlayer4Actions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnUseItem(InputAction.CallbackContext context);

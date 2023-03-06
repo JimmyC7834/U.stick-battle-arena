@@ -1,7 +1,11 @@
-using UnityEngine;
-using UnityEngine.Events;
+#region
+
 using Game.Player;
+using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
+
+#endregion
 
 namespace Game
 {
@@ -40,12 +44,12 @@ namespace Game
         private PlayerID _shooter;
 
         [SerializeField] protected GameplayService _service;
-        
+
+        [SerializeField] protected ProjectileID _id;
         [SerializeField] protected int _damage;
         [SerializeField] protected int _score;
-        [SerializeField] protected ProjectileID _id;
+        [SerializeField] protected bool _hit = false;
 
-        [SerializeField] private bool _hit = false;
 
         private void Awake()
         {

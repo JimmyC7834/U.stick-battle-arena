@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace Game
 {
@@ -9,6 +13,7 @@ namespace Game
         [SerializeField] protected float _gravity;
         
         [SerializeField] private ProjectileID _projectileID;
+        protected Transform _flipParent => _shootingPoint.parent.parent.parent;
 
         protected void Launch(PlayerID shooter)
         {
@@ -25,7 +30,7 @@ namespace Game
         protected Vector2 VelocityWithFlip(Vector2 velocity)
         {
             return new Vector2(
-                velocity.x * _shootingPoint.parent.parent.localScale.x * -1,
+                velocity.x * _flipParent.localScale.x * -1,
                 velocity.y
             );
         }
