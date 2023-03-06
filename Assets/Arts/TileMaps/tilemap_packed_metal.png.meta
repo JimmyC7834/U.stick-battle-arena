@@ -49,7 +49,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -2506,9 +2506,9 @@ TextureImporter:
       tilemap_packed_metal_69: -1629503370
       tilemap_packed_metal_55: 117386655
       tilemap_packed_metal_51: 2003791730
-      tilemap_packed_metal_21: -1459592218
-      tilemap_packed_metal_46: 1906267596
       tilemap_packed_metal_110: 1113650926
+      tilemap_packed_metal_46: 1906267596
+      tilemap_packed_metal_21: -1459592218
       tilemap_packed_metal_6: 989448823
       tilemap_packed_metal_74: 1779897965
       tilemap_packed_metal_39: 1929269428

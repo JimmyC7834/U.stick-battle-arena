@@ -1,21 +1,22 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game
 {
     public class FlameThrower : MeleeWeapon
     {
         [SerializeField] private float _fireInterval;
+        [SerializeField] private ParticleSystem _fireEffect;
         private float _currTime;
         private bool _shooting;
         private PlayerID _shooter;
-        
+
         protected override void Initialize()
         {
             OnItemUseDown += Shoot;
             OnItemUseUp += (_) => Stop();
             OnBreak += (_) => Stop();
             OnHold += (_) => Stop();
+            _fireEffect.Stop();
         }
 
         private void Update()
@@ -39,11 +40,13 @@ namespace Game
             _shooting = true;
             _shooter = shooter;
             _currTime = 0; // immediate shoot
+            _fireEffect.Play();
         }
 
         private void Stop()
         {
             _shooting = false;
+            _fireEffect.Stop();
         }
 
     }
