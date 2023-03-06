@@ -20,6 +20,7 @@ namespace Game
         public Sprite Icon => _icon;
         public int Durability => _durability;
         public float DurabilityPercent => (float) _durability / _maxDurability;
+        public Transform PlayerTrans => transform.parent.parent;
         
         /**
          * Invoked when this item is picked up
@@ -192,9 +193,28 @@ namespace Game
          * Adds recoil with _maxTilt considered when the gun durability decreases
          */
 		private void ApplyRecoil() {
-			// 
-			_targetAngle = new Vector3(0, 0, _targetAngle.z - _recoilAmount);
-			if (_targetAngle.z > 0 && _targetAngle.z < (360 - _maxTilt)) _targetAngle.z = 360 - _maxTilt;
+			
+            // If player is facing right
+            if (PlayerTrans.localScale.x < 0)
+            {
+                // Add recoil from current shot
+                _targetAngle = new Vector3(0, 0, Mathf.Lerp(
+                    -_maxTilt,
+                    _maxTilt,
+                    Mathf.InverseLerp(-359, 359, _recoilAmount + _targetAngle.z)));
+            }
+            // If player facing left
+            else
+            {
+                // Negative angles get converted to 360 + angle, so it converts it back here when calculating recoil
+                if (_targetAngle.z > 0) _targetAngle.z = -(359 - _targetAngle.z);
+                // "Add" recoil
+                _targetAngle = new Vector3(0, 0, Mathf.Lerp(
+                    -_maxTilt,
+                    _maxTilt,
+                    Mathf.InverseLerp(-359, 359, _targetAngle.z - _recoilAmount)));
+            }
+            // Set new target angle
 			_visual.transform.rotation = Quaternion.Euler(_targetAngle);
 		}
 
@@ -203,8 +223,8 @@ namespace Game
          */
 		public void Update() {
             _visual.transform.rotation = Quaternion.RotateTowards(_visual.transform.rotation, Quaternion.Euler(new Vector3(0, 0, 0)), _tiltSpeed * Time.deltaTime);
-			_targetAngle.z = _visual.transform.rotation.eulerAngles.z;
-		}
+            _targetAngle.z = _visual.transform.rotation.eulerAngles.z;
+        }
 
         public void MakeInvisible()
         {
