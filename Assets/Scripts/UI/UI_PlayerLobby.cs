@@ -28,8 +28,7 @@ namespace Game.UI
         {
             if (AllReady())
             {
-                _gameSettings.SetStageID(_nextScene);
-                _gameService.GameStart();
+                _gameService.SceneManager.LoadScene(_nextScene);
             }
         }
 
