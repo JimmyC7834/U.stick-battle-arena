@@ -14,6 +14,7 @@ namespace Game
         MapSelectionMenu = 3,
         PlayerLobby = 4,
         Farm = 10,
+        Space = 11,
     }
     
     /**
