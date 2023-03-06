@@ -47,8 +47,9 @@ namespace Game
             _remainingLife = new Dictionary<PlayerID, int>();
             _playerList = new Dictionary<PlayerID, PlayerStat>();
             _parent = new GameObject("Player Pool").GetComponent<Transform>();
-            
-            // TODO: better initialization required, current is not robust for inorder reference assignment
+
+            _playerDefaultLife = _gameSettings.PlayerLifeCount;
+
             // initialize all the values
             for (int i = 0; i < _gameSettings.PlayerCount; i++)
             {
@@ -112,9 +113,9 @@ namespace Game
         /**
          * Increase the remaining life of the given player by 1.
          */
-        public void IncreaseRemainingLife(PlayerID id)
+        public void IncreaseRemainingLife(PlayerID id, int val)
         {
-            _remainingLife[id]++;
+            _remainingLife[id] += val;
             Debug.Log($"{id} got {GetRemainingLife(id)} life(s) left");
         }
 

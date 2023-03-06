@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05eed5be4d4e4e8a8b6451028a3bee83, type: 3}
-  m_Name: BattleRoyalGameModeLogicSO
+  m_Script: {fileID: 11500000, guid: 7ae225e9365b4f56b878fb47674eed87, type: 3}
+  m_Name: HighScoreGameModeLogicSO
   m_EditorClassIdentifier: 
-  _id: 0
+  _id: 1
   _gameSettings: {fileID: 11400000, guid: 20164ed21e2c1374585f0d83457de296, type: 2}
   _gameplayService: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
-  _lifeCount: 5
+  _targetScore: 10
