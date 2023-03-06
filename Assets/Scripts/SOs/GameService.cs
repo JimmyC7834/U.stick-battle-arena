@@ -1,3 +1,4 @@
+using Game.UI;
 using UnityEngine;
 
 namespace Game
@@ -7,6 +8,7 @@ namespace Game
     {
         [SerializeField] private GameSettingsSO _gameSettings;
         public AudioManager AudioManager { get; private set; }
+        public UI_SceneTransition SceneTransition { get; private set; }
         public SceneManager SceneManager { get; private set; }
 
         public void ProvideAudioManager(AudioManager _audioManager)
@@ -17,6 +19,11 @@ namespace Game
         public void ProvideSceneManager(SceneManager _sceneManager)
         {
             SceneManager = _sceneManager;
+        }
+        
+        public void ProvideSceneTransition(UI_SceneTransition _sceneTransition)
+        {
+            SceneTransition = _sceneTransition;
         }
 
         public void GameStart()

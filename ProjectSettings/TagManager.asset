@@ -44,14 +44,14 @@ TagManager:
   - name: StageBack
     uniqueID: 3648685547
     locked: 0
-  - name: StageMap
-    uniqueID: 118716747
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 1559172925
+    locked: 0
+  - name: StageMap
+    uniqueID: 118716747
     locked: 0
   - name: Weapon
     uniqueID: 4215977981
@@ -61,4 +61,7 @@ TagManager:
     locked: 0
   - name: TileMapBlock
     uniqueID: 1279688161
+    locked: 0
+  - name: UI
+    uniqueID: 2637431999
     locked: 0

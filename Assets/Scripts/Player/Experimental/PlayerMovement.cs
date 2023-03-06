@@ -124,6 +124,8 @@ namespace Game.Player
 			{
 				OnJumpUpInput();
 			}
+			
+			OnMovement.Invoke(vec);
 		}
 
 		private void Update()
