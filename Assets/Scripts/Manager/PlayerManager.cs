@@ -47,8 +47,9 @@ namespace Game
             _remainingLife = new Dictionary<PlayerID, int>();
             _playerList = new Dictionary<PlayerID, PlayerStat>();
             _parent = new GameObject("Player Pool").GetComponent<Transform>();
-            
-            // TODO: better initialization required, current is not robust for inorder reference assignment
+
+            _playerDefaultLife = _gameSettings.PlayerLifeCount;
+
             // initialize all the values
             for (int i = 0; i < _gameSettings.PlayerCount; i++)
             {

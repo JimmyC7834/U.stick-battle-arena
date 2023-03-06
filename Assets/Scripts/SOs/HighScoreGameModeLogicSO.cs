@@ -15,12 +15,7 @@ namespace Game
         
         protected override void HookEvents()
         {
-            foreach (PlayerID id in GameSettingsSO.PLAYER_IDS)
-            {
-                if (_gameSettings.PlayerIDInGameplay(id))
-                    _gameplayService.PlayerManager.IncreaseScore(id, 9999);
-            }
-
+            _gameSettings.SetPlayerLifeCount(99);
             _gameplayService.PlayerManager.OnScoreChange += CheckForWinner;
         }
         

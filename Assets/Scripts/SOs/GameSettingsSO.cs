@@ -23,6 +23,7 @@ namespace Game
         };
 
         public int PlayerCount { get; private set; } = MIN_PLAYER_COUNT;
+        public int PlayerLifeCount { get; private set; } = 5;
         public SceneID GameplayStageID { get; private set; }
         public GameModeID GameModeID { get; private set; }
         public SceneID StageID { get; private set; }
@@ -60,6 +61,11 @@ namespace Game
         public void SetGameplayStageID(SceneID id)
         {
             GameplayStageID = id;
+        }
+        
+        public void SetPlayerLifeCount(int val)
+        {
+            PlayerLifeCount = val;
         }
         
         public void SetGameMode(GameModeID id)

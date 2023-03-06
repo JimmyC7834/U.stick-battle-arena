@@ -12,9 +12,11 @@ namespace Game
     {
         [SerializeField] private GameSettingsSO _gameSettings;
         [SerializeField] private GameplayService _gameplayService;
+        [SerializeField] private int _lifeCount;
 
         protected override void HookEvents()
         {
+            _gameSettings.SetPlayerLifeCount(_lifeCount);
             _gameplayService.PlayerManager.OnPlayerDies += CheckForWinner;
         }
         
