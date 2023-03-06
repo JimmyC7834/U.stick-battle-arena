@@ -11,6 +11,7 @@ namespace Game.UI
         [SerializeField] private GameSettingsSO _gameSettings;
         [SerializeField] private GameService _gameService;
         [SerializeField] private UI_PlayerLobbyPanel[] _playerPanels;
+        [SerializeField] private SceneID _nextScene;
         private int _playerCount = 2;
 
         private void Start()
@@ -27,7 +28,7 @@ namespace Game.UI
         {
             if (AllReady())
             {
-                _gameSettings.SetStageID(SceneID.Farm);
+                _gameSettings.SetStageID(_nextScene);
                 _gameService.GameStart();
             }
         }

@@ -12,6 +12,20 @@ Adding to the project is done in a standardized [pull request workflow](https://
 - Do not approve pull requests that have not/ do not pass all tests in the GameCI (check actions tab)
 - Do not approve pull requests that you have not fully reviewed and built locally
 - Lastly, make sure all code follows the [C# style guide for Unity ](https://github.com/JimmyC7834/U.stick-battle-arena/blob/Jimmy-reset-main-for-PR/Docs/C%23%20style%20guide.md)
+### Adding a new stage
+1. If you want to build a new stage, make a copy from `Assets/Scenes/Stages/stageSetupTemplate` and you can start in a clean stage setup. (Notice that no matter what you do, please DO NOT override any prefab values with the override button)
+##### Stage building
+2. In the new stage you copied. Please unpack the `---STAGE---` object to prevent overriding the template prefab. (right click on the object and click `prefab > unpack completely`)
+3. Under the `---STAGE---` object is where you wil paint your stage tilemap. There are background, stage, and foreground for the stage tilemap. Where only the stage tilemap will have colliders for the stage. The background and foreground are for stage visuals. Notice that foreground tiles can block the player's sprite so you can make some hiding spots, etc.
+4. To start editing the stage, in the editor please go to `Window > 2D > Tile Palette` and paint the corresponding layer. Notice that it is easy for us to forget changing the select tilemap to paint. Make sure you're on the correct tilemap from time to time.
+5. There are also stage mechanisms like: killing zone, wrap zone, moving platform, etc. Please add and config as needed. (Notice that moving platform could be a bit tricky to setup, please take reference on other scene and the set up template prefab). Also, please unpack the stage mechanism prefab to prevent value override.
+##### Stage Design:
+6. Remember to design 4 spots for he 4 players to spawn. Also set the spawn points' position under the `Managers > PlayerManager` object.
+7. Remember to add an item spawner youself. You should decide if each item fits the stage and set the rate of spawning for each item.
+8. Remember to add spawn points for item spawner to spawn. And make sure the spawn points are reasonable and fun.
+9. Lastly, make sure you wrap the stage with black tiles in the stage tilemap to prevent player from leaving the map. Or you need to make sure they will dead outside the border with killing zone.
+##### Submitting stage
+10. Just make a pull request in GitHub.
 ### Bug Tracking And Reporting
 Bugs are reported to `JimmyC7834/U.stick-battle-arena` repo under the issues tab.
 - It is best to let the responsible for the feature to fix the bug. Please `@` the responsibility for your issue. You can find the responsible by looking through the PR records or the branch with the responsible's name.
