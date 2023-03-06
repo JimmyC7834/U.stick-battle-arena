@@ -30,7 +30,6 @@ namespace Game
         public int PlayerLifeCount { get; private set; } = 5;
         public SceneID GameplayStageID { get; private set; }
         public GameModeID GameModeID { get; private set; }
-        public SceneID StageID { get; private set; }
         public static readonly SceneID[] NON_STAGE_IDS =
         {
             SceneID.MainMenu,
@@ -61,12 +60,7 @@ namespace Game
 
             PlayerCount = value;
         }
-        
-        public void SetGameplayStageID(SceneID id)
-        {
-            GameplayStageID = id;
-        }
-        
+
         public void SetPlayerLifeCount(int val)
         {
             PlayerLifeCount = val;
@@ -77,10 +71,10 @@ namespace Game
             GameModeID = id;
         }
         
-        public void SetStageID(SceneID id)
+        public void SetGameplayStageID(SceneID id)
         {
             if (NON_STAGE_IDS.Contains(id)) return;
-            StageID = id;
+            GameplayStageID = id;
         }
 
         public void SetPlayerSettings(PlayerReadyInfo info)
