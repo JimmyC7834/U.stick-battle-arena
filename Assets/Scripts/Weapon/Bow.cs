@@ -19,6 +19,7 @@ namespace Game
 
         private void Update()
         {
+            base.Update();
             if (!_pulling) return;
 
             _pull = Mathf.Min(_pull + Time.deltaTime, _maxPull);
