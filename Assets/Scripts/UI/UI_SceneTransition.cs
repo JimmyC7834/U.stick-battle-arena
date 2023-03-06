@@ -1,7 +1,10 @@
-﻿using System;
+﻿#region
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+
+#endregion
 
 namespace Game.UI
 {

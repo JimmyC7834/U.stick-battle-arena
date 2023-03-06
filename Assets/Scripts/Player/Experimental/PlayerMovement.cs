@@ -6,8 +6,12 @@
 	Feel free to use this in your own games, and I'd love to see anything you make!
  */
 
+#region
+
 using UnityEngine;
 using UnityEngine.Events;
+
+#endregion
 
 namespace Game.Player
 {
