@@ -59,26 +59,5 @@ namespace Game
             
             audioSource.Play();
         }
-
-        public void PlayFootstep()
-        {
-            int rand = Random.Range(0, 4);
-
-            switch (rand)
-            {
-                case 0:
-                    PlayAudio(AudioID.Walk1);
-                    break;
-                case 1:
-                    PlayAudio(AudioID.Walk2);
-                    break;
-                case 2:
-                    PlayAudio(AudioID.Walk3);
-                    break;
-                case 3:
-                    PlayAudio(AudioID.Walk4);
-                    break;
-            }
-        }
     }
 }

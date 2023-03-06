@@ -27,7 +27,7 @@ namespace Game.UI
 
         private void ReturnToMainMenu()
         {
-            _gameService.AudioManager.PlayAudio(AudioID.Click2);
+            _gameService.AudioManager.PlayAudio(AudioID.Click);
             _gameService.SceneManager.LoadScene(SceneID.MainMenu);
         }
 

@@ -52,7 +52,7 @@ namespace Game.Player
 		// Audio
 		private bool _playWalking;
 		private float _playWalkingTime;
-		private float _playWalkingInterval = 0.3f;
+		private float _playWalkingInterval = 0.2f;
 
 		private Vector2 _moveInput;
 		public float LastPressedJumpTime { get; private set; }
@@ -135,7 +135,6 @@ namespace Game.Player
 			if(_moveInput.y > 0 && !IsJumping)
 			{
 				OnJumpInput();
-				_service.AudioManager.PlayAudio(AudioID.Jump);
 			}
 
 			if (_moveInput.y == 0 && IsJumping)
@@ -281,7 +280,7 @@ namespace Game.Player
 				else
 				{
 					_playWalkingTime = _playWalkingInterval;
-					_service.AudioManager.PlayFootstep();
+					_service.AudioManager.PlayAudio(AudioID.Walk);
 				}
 			}
 			#endregion
@@ -391,6 +390,7 @@ namespace Game.Player
 		private void Jump()
 		{
 			//Ensures we can't call Jump multiple times from one press
+			_service.AudioManager.PlayAudio(AudioID.Jump);
 			LastPressedJumpTime = 0;
 			LastOnGroundTime = 0;
 
@@ -409,6 +409,7 @@ namespace Game.Player
 		private void WallJump(int dir)
 		{
 			//Ensures we can't call Wall Jump multiple times from one press
+			_service.AudioManager.PlayAudio(AudioID.Jump);
 			LastPressedJumpTime = 0;
 			LastOnGroundTime = 0;
 			LastOnWallRightTime = 0;
