@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace UI
@@ -18,7 +17,7 @@ namespace UI
             _text = GetComponent<TMP_Text>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             _text.ForceMeshUpdate();
             _mesh = _text.mesh;
@@ -27,7 +26,7 @@ namespace UI
             for (int i = 0; i < _text.textInfo.characterCount; i++)
             {
                 int index = _text.textInfo.characterInfo[i].vertexIndex;
-                Vector3 offset = Wobble((Time.time + i) * _speed * Time.fixedTime);
+                Vector3 offset = Wobble((Time.time + i) * _speed);
                 _vs[index] += offset;
                 _vs[index + 1] += offset;
                 _vs[index + 2] += offset;
