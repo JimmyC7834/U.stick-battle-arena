@@ -46,6 +46,13 @@ namespace Game.UI
             playerInventory.OnItemEquip += HookToItemDurabilityChange;
             playerInventory.OnItemHold += UnHookToItemDurabilityChange;
             playerInventory.OnItemPick += UpdateEquipItemIcon;
+
+            _lifeCountLabel.text = _service.PlayerManager
+                .GetRemainingLife(_playerID).ToString();
+
+            PlayerReadyInfo info = _gameSettings.GetPlayerSettings(_playerID);
+            _playerDisplay.color = info.Color;
+            _playerAcc.sprite = info.Accessory;
             
             _service.PlayerManager.OnScoreChange += UpdateScore;
         }
