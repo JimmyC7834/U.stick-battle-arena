@@ -6,8 +6,12 @@
 	Feel free to use this in your own games, and I'd love to see anything you make!
  */
 
+#region
+
 using UnityEngine;
 using UnityEngine.Events;
+
+#endregion
 
 namespace Game.Player
 {
@@ -64,6 +68,8 @@ namespace Game.Player
 
 		[Header("InputReader")] [SerializeField]
 		private PlayerInputReader _input;
+
+		[SerializeField] private GameplayService _service;
 		
 		public event UnityAction OnItemUseDown = () => { };
 		public event UnityAction OnItemUseUp = () => { };
@@ -81,11 +87,15 @@ namespace Game.Player
 			_input.useItemUpEvent += UseItemUp;
 			_input.switchItemEvent += SwitchItem;
 
+			_service.OnPause += Deactivate;
+			_service.OnContinue += Activate;
+
 			// mute control for 0.5 seconds
 			Invoke(nameof(Activate), 0.5f);
 		}
 
 		private void Activate() => _input.EnablePlayerInput(GetComponent<PlayerStat>().ID);
+		private void Deactivate() => _input.DisableAllInput();
 		private void UseItemDown() => OnItemUseDown.Invoke();
 		private void UseItemUp() => OnItemUseUp.Invoke();
 		private void SwitchItem() => OnSwitchItem.Invoke();
@@ -118,6 +128,8 @@ namespace Game.Player
 			{
 				OnJumpUpInput();
 			}
+			
+			OnMovement.Invoke(vec);
 		}
 
 		private void Update()

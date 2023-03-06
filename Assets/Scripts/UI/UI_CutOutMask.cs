@@ -1,6 +1,10 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+
+#endregion
 
 namespace Game.UI
 {

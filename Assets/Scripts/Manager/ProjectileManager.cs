@@ -1,8 +1,12 @@
+#region
+
 using System;
 using System.Collections.Generic;
 using Game.DataSet;
 using UnityEngine;
 using ProjectilePool = Game.GameObjectPool<Game.Projectile>;
+
+#endregion
 
 namespace Game
 {
@@ -14,6 +18,9 @@ namespace Game
         SMGBullet = 4,
         ShotgunBullet = 5,
         Grenade = 6,
+        MinigunBullet = 7,
+        Thorn = 8,
+        Mine = 9,
     }
 
     /**
@@ -25,7 +32,8 @@ namespace Game
         {
             ProjectileID.Arrow, ProjectileID.Grenade, 
             ProjectileID.PistolBullet, ProjectileID.ShotgunBullet, 
-            ProjectileID.SniperBullet, ProjectileID.SMGBullet
+            ProjectileID.SniperBullet, ProjectileID.SMGBullet, ProjectileID.MinigunBullet,
+            ProjectileID.Thorn, ProjectileID.Mine,
         };
         
         private Dictionary<ProjectileID, ProjectilePool> _poolMap;

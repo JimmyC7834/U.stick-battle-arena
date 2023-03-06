@@ -1,8 +1,12 @@
+#region
+
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Game.DataSet;
 using UnityEngine;
+using UnityEngine.Events;
+
+#endregion
 
 namespace Game
 {
@@ -15,15 +19,23 @@ namespace Game
         SMG = 5,
         Shotgun = 6,
         HandGrenade = 7,
+        Minigun = 8,
+        FlameThrower = 9,
+        ThornItem = 10,
+        MineItem = 11,
     }
-    
+
     public class UsableItemManager : MonoBehaviour
     {
         public static readonly UsableItemID[] UsableItemIDs =
         {
             UsableItemID.Bow, UsableItemID.Dagger, UsableItemID.Pistol, 
-            UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade, UsableItemID.SMG
+            UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade,
+            UsableItemID.SMG, UsableItemID.Minigun, UsableItemID.FlameThrower,
+            UsableItemID.ThornItem, UsableItemID.MineItem,
         };
+
+        public event UnityAction OnReturnUsableItem = () => { };
         
         [SerializeField] private UsableItemDataSetSO _usableItemData;
 
@@ -57,6 +69,7 @@ namespace Game
          */
         public void ReturnUsableItem(UsableItemID id, UsableItem usableItem)
         {
+            OnReturnUsableItem.Invoke();
             usableItem.SetAndMoveToParent(_poolmap[id].PoolParent);
             _poolmap[id].Release(usableItem);
         }
