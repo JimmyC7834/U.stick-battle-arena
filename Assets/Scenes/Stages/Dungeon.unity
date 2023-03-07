@@ -14786,7 +14786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 533050899}
   m_Layer: 0
-  m_Name: WarpZones
+  m_Name: KillZones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19222,9 +19222,9 @@ GameObject:
   m_Component:
   - component: {fileID: 978415224}
   - component: {fileID: 978415226}
-  - component: {fileID: 978415225}
+  - component: {fileID: 978415227}
   m_Layer: 0
-  m_Name: WrapZone (1)
+  m_Name: KillZone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19238,27 +19238,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978415223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.5, y: -11.2, z: 0}
+  m_LocalPosition: {x: -8.5, y: -10.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 533050899}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &978415225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978415223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 069944effa1d442c93c17efbea55e681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wrapOffset: {x: 0, y: 18, z: 0}
-  _warpExactly: 0
 --- !u!61 &978415226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19285,6 +19271,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &978415227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978415223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99dc427ce2c10f9439fe05f451670597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044712218
 GameObject:
   m_ObjectHideFlags: 0
@@ -20236,9 +20234,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1128182501}
   - component: {fileID: 1128182503}
-  - component: {fileID: 1128182502}
+  - component: {fileID: 1128182504}
   m_Layer: 0
-  m_Name: WrapZone
+  m_Name: KillZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20252,27 +20250,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128182500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.42, y: -11.46, z: 0}
+  m_LocalPosition: {x: 0.42, y: -10.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 533050899}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1128182502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128182500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 069944effa1d442c93c17efbea55e681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wrapOffset: {x: 0, y: 17, z: 0}
-  _warpExactly: 0
 --- !u!61 &1128182503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20299,6 +20283,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1128182504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128182500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99dc427ce2c10f9439fe05f451670597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1357044456
 GameObject:
   m_ObjectHideFlags: 0
@@ -20340,9 +20336,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1414482991}
   - component: {fileID: 1414482993}
-  - component: {fileID: 1414482992}
+  - component: {fileID: 1414482994}
   m_Layer: 0
-  m_Name: WrapZone (2)
+  m_Name: KillZone (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20356,27 +20352,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414482990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.49, y: -11.46, z: 0}
+  m_LocalPosition: {x: 8.49, y: -10.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 533050899}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1414482992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414482990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 069944effa1d442c93c17efbea55e681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wrapOffset: {x: 0, y: 17, z: 0}
-  _warpExactly: 0
 --- !u!61 &1414482993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20403,6 +20385,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1414482994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414482990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99dc427ce2c10f9439fe05f451670597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1591529600
 GameObject:
   m_ObjectHideFlags: 0
