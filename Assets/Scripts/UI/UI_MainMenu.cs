@@ -13,11 +13,13 @@ namespace Game
         
         public void PlayGame() 
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Click);
             _gameService.SceneManager.LoadScene(_playGameButtonScene);
         }
 
         public void QuitGame()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Return);
             _gameService.SceneManager.ExitGame();
         }
     }
