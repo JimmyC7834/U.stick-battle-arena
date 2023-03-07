@@ -163,6 +163,10 @@ MonoBehaviour:
   _visual: {fileID: 1932580010565041153}
   _audioOnUse: 8
   _audioOnEquip: 9
+  _maxTilt: 120
+  _tiltSpeed: 30
+  _recoilAmount: 90
+  _recoilForce: {x: 35, y: 0}
   _id: 4
   _maxDurability: 2
   _durability: 2
@@ -242,7 +246,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -78989315
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 309a7e92045aba04b882b1ac75aa3fad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
