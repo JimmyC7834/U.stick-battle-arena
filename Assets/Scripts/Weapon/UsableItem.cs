@@ -22,6 +22,7 @@ namespace Game
         public Sprite Icon => _icon;
         public int Durability => _durability;
         public float DurabilityPercent => (float) _durability / _maxDurability;
+        public Transform PlayerTrans => transform.parent.parent;
         
         /**
          * Invoked when this item is picked up
@@ -62,10 +63,17 @@ namespace Game
         [SerializeField] protected GameObject _visual;
         [SerializeField] protected AudioID _audioOnUse;
         [SerializeField] protected AudioID _audioOnEquip;
+		// Controls the max angle the gun can recoil to
+		[SerializeField] private float _maxTilt = 70f;
+		// Controls how fast the player recovers from the recoil
+        [SerializeField] private float _tiltSpeed = 100f;
+		// Controls the angle added to the weapon per shot
+		[SerializeField] private float _recoilAmount = 20f;
 
         private Rigidbody2D _rigidbody;
         private Collider2D _collider;
         private Transform _transform;
+		private Vector3 _targetAngle;
 
         [SerializeField] private UsableItemID _id;
         [SerializeField] private int _maxDurability;
@@ -173,6 +181,7 @@ namespace Game
          */
         public void ReduceDurability(int value)
         {
+			ApplyRecoil();
             _durability -= value;
             OnDurabilityChange.Invoke(this);
             if (_durability > 0) return;
@@ -180,6 +189,43 @@ namespace Game
             OnReturn.Invoke();
             _service.UsableItemManager.ReturnUsableItem(_id, this);
             Reset();
+        }
+
+		/**
+         * Adds recoil with _maxTilt considered when the gun durability decreases
+         */
+		private void ApplyRecoil() {
+			
+            // If player is facing right
+            if (PlayerTrans.localScale.x < 0)
+            {
+                // Add recoil from current shot
+                _targetAngle = new Vector3(0, 0, Mathf.Lerp(
+                    -_maxTilt,
+                    _maxTilt,
+                    Mathf.InverseLerp(-359, 359, _recoilAmount + _targetAngle.z)));
+            }
+            // If player facing left
+            else
+            {
+                // Negative angles get converted to 360 + angle, so it converts it back here when calculating recoil
+                if (_targetAngle.z > 0) _targetAngle.z = -(359 - _targetAngle.z);
+                // "Add" recoil
+                _targetAngle = new Vector3(0, 0, Mathf.Lerp(
+                    -_maxTilt,
+                    _maxTilt,
+                    Mathf.InverseLerp(-359, 359, _targetAngle.z - _recoilAmount)));
+            }
+            // Set new target angle
+			_visual.transform.rotation = Quaternion.Euler(_targetAngle);
+		}
+
+		/**
+         * Update in this class controls the smooth recovery from recoil
+         */
+		public void Update() {
+            _visual.transform.rotation = Quaternion.RotateTowards(_visual.transform.rotation, Quaternion.Euler(new Vector3(0, 0, 0)), _tiltSpeed * Time.deltaTime);
+            _targetAngle.z = _visual.transform.rotation.eulerAngles.z;
         }
 
         public void MakeInvisible()
