@@ -37,6 +37,15 @@ namespace Game
         Select1 = 22,
         Select2 = 23,
         Pause = 24,
+        
+        // BGMs
+        MainMenu = 100,
+        Menus = 101,
+        Farm = 102,
+        Space = 103,
+        Factory = 104,
+        Waterfall = 105,
+        Mine = 106,
     }
     
     [CreateAssetMenu(menuName = "Game/DataEntry/AudioClip")]

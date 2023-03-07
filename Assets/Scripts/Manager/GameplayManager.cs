@@ -41,6 +41,8 @@ namespace Game
             // initialize and hook the game ended event
             _gameModeLogic.Initialize();
             _gameModeLogic.OnGameEnded += HandleGameEnded;
+            
+            _gameService.PlayStageBGM();
         }
 
         private void HandleGameEnded(PlayerID winnerId)
@@ -56,6 +58,7 @@ namespace Game
         private void LoadBackToMainMenu()
         {
             Time.timeScale = 1f;
+            _gameService.StopStageBGM();
             _gameService.SceneManager.LoadScene(SceneID.MainMenu);
         }
     }

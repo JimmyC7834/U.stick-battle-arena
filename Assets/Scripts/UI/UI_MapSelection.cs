@@ -24,6 +24,11 @@ namespace Game
                 UI_MapButton button = _mapButtons[i];
                 button.Button.onClick.AddListener(() => SetStage(button));
             }
+            
+            if (!_gameService.AudioManager.AudioIsPlaying(AudioID.Menus))
+            {
+                _gameService.AudioManager.PlayAudio(AudioID.Menus);
+            }
         }
 
         private void SetStage(UI_MapButton button)
@@ -43,6 +48,7 @@ namespace Game
         public void GameStart()
         {
             _gameService.AudioManager.PlayAudio(AudioID.Click);
+            _gameService.AudioManager.StopAudio(AudioID.Menus);
             _gameService.GameStart();
         }
 
