@@ -63,6 +63,7 @@ namespace Game
             GameObject explosion = Instantiate(_explosionVisual, transform).gameObject;
             explosion.transform.position = transform.position;
             explosion.transform.SetParent(null);
+            _service.AudioManager.PlayAudio(AudioID.Explosion);
 
             ReturnToPool();
         }
