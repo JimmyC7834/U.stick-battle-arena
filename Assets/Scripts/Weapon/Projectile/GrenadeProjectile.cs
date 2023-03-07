@@ -10,7 +10,8 @@ namespace Game
     public class GrenadeProjectile : Projectile
     {
         [SerializeField] private float _splashRadius;
-        
+        [SerializeField] private GameObject _explosionVisual;
+
         private void Start()
         {
             OnHitPlayer += (_) => Explode();
@@ -34,6 +35,11 @@ namespace Game
                 _service.PlayerManager.
                     GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
             }
+            
+            GameObject explosion = Instantiate(_explosionVisual, transform).gameObject;
+            explosion.transform.position = transform.position;
+            explosion.transform.SetParent(null);
+            
             ReturnToPool();
         }
     }

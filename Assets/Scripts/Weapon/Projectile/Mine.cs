@@ -10,6 +10,7 @@ namespace Game
         [SerializeField] private float _durationTime;
         [SerializeField] private float _thrust;
         [SerializeField] private float _splashRadius;
+        [SerializeField] private GameObject _explosionVisual;
 
         private float _currTime;
         
@@ -62,6 +63,11 @@ namespace Game
                 
                 KnockBack(damageInfo);
             }
+            
+            GameObject explosion = Instantiate(_explosionVisual, transform).gameObject;
+            explosion.transform.position = transform.position;
+            explosion.transform.SetParent(null);
+            
             ReturnToPool();
         }
 

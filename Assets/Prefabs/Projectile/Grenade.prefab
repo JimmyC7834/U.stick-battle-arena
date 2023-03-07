@@ -106,8 +106,9 @@ MonoBehaviour:
   _damage: 10
   _score: 10
   _hit: 0
-  _splashRadius: 3
+  _splashRadius: 1.5
   _explodeTime: 3
+  _explosionVisual: {fileID: 5235336355612683833, guid: 5f0dcb5c4762c7b49bb8e2cc819328d2, type: 3}
 --- !u!1 &1083561488964981533
 GameObject:
   m_ObjectHideFlags: 0
