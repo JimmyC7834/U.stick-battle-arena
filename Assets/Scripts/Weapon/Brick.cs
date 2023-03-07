@@ -8,6 +8,5 @@ namespace Game
         {
             OnItemUseDown += Attack;
         }
-
     }
 }

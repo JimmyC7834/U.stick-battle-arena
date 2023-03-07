@@ -15,4 +15,4 @@ MonoBehaviour:
   _id: 1
   _gameSettings: {fileID: 11400000, guid: 20164ed21e2c1374585f0d83457de296, type: 2}
   _gameplayService: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
-  _targetScore: 10
+  _targetScore: 100
