@@ -130,8 +130,8 @@ MonoBehaviour:
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
   _icon: {fileID: 21300000, guid: f51e086e034b48c44ac92125e295e011, type: 3}
   _visual: {fileID: 1932580010565041153}
-  _audioOnUse: 0
-  _audioOnEquip: 0
+  _audioOnUse: 13
+  _audioOnEquip: 19
   _maxTilt: 150
   _tiltSpeed: 100
   _recoilAmount: -150
