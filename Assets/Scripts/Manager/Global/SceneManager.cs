@@ -15,6 +15,8 @@ namespace Game
         PlayerLobby = 4,
         Farm = 10,
         Space = 11,
+        Factory = 12,
+        Waterfall = 13,
     }
     
     /**
