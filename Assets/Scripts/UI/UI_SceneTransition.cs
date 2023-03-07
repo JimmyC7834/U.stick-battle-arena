@@ -12,6 +12,7 @@ namespace Game.UI
     {
         [SerializeField] private GameService _gameService;
         [SerializeField] private RectTransform _cutOutTrans;
+        [SerializeField] private GameObject _uiBlocker;
         [SerializeField] private Vector2 _openSize;
         [SerializeField] private float _speed;
 
@@ -22,11 +23,13 @@ namespace Game.UI
 
         public void CloseScene(UnityAction callback)
         {
+            _uiBlocker.SetActive(true);
             StartCoroutine(PerformCloseScene(callback));
         }
         
         public void OpenScene(UnityAction callback)
         {
+            _uiBlocker.SetActive(true);
             StartCoroutine(PerformOpenScene(callback));
         }
 
@@ -55,6 +58,7 @@ namespace Game.UI
             }
             
             _cutOutTrans.sizeDelta = _openSize;
+            _uiBlocker.SetActive(false);
             callback?.Invoke();
         }
     }

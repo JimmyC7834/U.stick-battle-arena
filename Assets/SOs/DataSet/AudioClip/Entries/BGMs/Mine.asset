@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fb59846d8c0e02479e0c80cc13c8f5c, type: 3}
-  m_Name: Factory
+  m_Name: Mine
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 8755d481fc8c1fa4d957d0c4702c26bc, type: 3}
-  _id: 104
+  _audioClip: {fileID: 8300000, guid: 6cfddcc294bc67d43baefabd4cfbd6fa, type: 3}
+  _id: 106
   _defaultSetting:
-    _pitch: 1
-    _volume: 1
+    _pitch: 0.95
+    _volume: 0.3
     _loop: 1
