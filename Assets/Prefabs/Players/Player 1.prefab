@@ -360,7 +360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxTilt: 10
   _tiltSpeed: 50
-  _landAnimDuration: 0.45
   _renderer: {fileID: 4044784412276161191}
   _anim: {fileID: 6182279596286183037}
 --- !u!61 &475500005790533100

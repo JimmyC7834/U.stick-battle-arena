@@ -24,7 +24,6 @@ namespace Game
         ThornItem = 10,
         MineItem = 11,
         BaseballBat = 12,
-        Spear = 13,
         BrassKnuckles = 14,
         Longsword = 15,
         Brick = 16,
@@ -38,7 +37,7 @@ namespace Game
             UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade,
             UsableItemID.SMG, UsableItemID.Minigun, UsableItemID.FlameThrower,
             UsableItemID.ThornItem, UsableItemID.MineItem,
-            UsableItemID.BaseballBat, UsableItemID.Spear, UsableItemID.BrassKnuckles, 
+            UsableItemID.BaseballBat, UsableItemID.BrassKnuckles, 
             UsableItemID.Brick, UsableItemID.Longsword
         };
 

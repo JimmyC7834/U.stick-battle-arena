@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3189781468407678171}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitBoxOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3404898215662358123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.665, y: -0.174, z: 0}
+  m_LocalPosition: {x: -1.049, y: -0.035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4961244621800134769}
   - component: {fileID: 4961244621800134768}
   - component: {fileID: 6358899759404861397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Longsword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 4961244621800134783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.75, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4961244622899746948}
@@ -80,7 +80,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4, y: -0.15}
+  m_Offset: {x: -0.14, y: 0.08}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -91,7 +91,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62, y: 0.23}
+  m_Size: {x: 0.62, y: 0.99}
   m_EdgeRadius: 0
 --- !u!50 &4961244621800134768
 Rigidbody2D:
@@ -127,19 +127,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
-  _icon: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
+  _icon: {fileID: 21300000, guid: 1ddd493e8d181224391288d4cc6a05b3, type: 3}
   _visual: {fileID: 4961244622899746949}
   _audioOnUse: 0
   _audioOnEquip: 0
+  _maxTilt: 100
+  _tiltSpeed: 100
+  _recoilAmount: -100
+  _recoilForce: {x: 0, y: 0}
   _id: 15
-  _maxDurability: 10
-  _durability: 10
+  _maxDurability: 4
+  _durability: 4
   IsAvailable: 1
-  _cooldownDuration: 0.7
-  _damage: 8
-  _score: 8
-  _thrust: 10
-  _rayCastRadius: 0.5
+  _cooldownDuration: 0.35
+  _damage: 3
+  _score: 3
+  _thrust: 5
+  _rayCastRadius: 1
   _hitBoxOrigin: {fileID: 3189781468407678171}
 --- !u!1 &4961244622899746949
 GameObject:
@@ -150,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4961244622899746948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4961244622901104276}
   - component: {fileID: 4961244622901104279}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,8 +202,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4961244622901104277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -0.15, z: 0}
-  m_LocalScale: {x: 0.63, y: 0.22, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4961244622899746948}
@@ -243,11 +247,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -78989315
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 868ec022ec5370c4cafbe00bd333295b, type: 3}
-  m_Color: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1ddd493e8d181224391288d4cc6a05b3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

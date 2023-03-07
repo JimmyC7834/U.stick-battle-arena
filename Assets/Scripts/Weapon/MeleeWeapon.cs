@@ -1,5 +1,6 @@
 #region
 
+using System;
 using System.Collections;
 using Game.Player;
 using TMPro;
@@ -28,31 +29,34 @@ namespace Game
         {
             if (IsAvailable == false) return;
             _service.AudioManager.PlayAudio(_audioOnUse);
-            ReduceDurability(1);
             
             Collider2D[] cols = Physics2D.OverlapCircleAll(_hitBoxOrigin.position, _rayCastRadius);
-            if (cols == null) return;
-
-            foreach (Collider2D col in cols)
+            if (cols != null)
             {
-                // check if hit a player
-                PlayerStat target = col.GetComponent<PlayerStat>();
-                if (target != null && target.ID != attacker)
+                foreach (Collider2D col in cols)
                 {
-                    // Deduct health of the hit other player
-                    DamageInfo damageInfo = new DamageInfo(
-                        attacker,
-                        target.ID,
-                        _damage,
-                        this);
-                    target.DeductHealth(damageInfo);
+                    // check if hit a player
+                    PlayerStat target = col.GetComponent<PlayerStat>();
+                    if (target != null && target.ID != attacker)
+                    {
+                        // Deduct health of the hit other player
+                        DamageInfo damageInfo = new DamageInfo(
+                            attacker,
+                            target.ID,
+                            _damage,
+                            this);
+                        target.DeductHealth(damageInfo);
                 
-                    // Add Score to the attacker
-                    _service.PlayerManager.IncreaseScore(attacker, _score);
-                    KnockBack(damageInfo);
+                        // Add Score to the attacker
+                        _service.PlayerManager.IncreaseScore(attacker, _score);
+                        KnockBack(damageInfo);
+                    }
                 }
             }
-            
+
+            ReduceDurability(1);
+
+            if (!isActiveAndEnabled) return;
             StartCoroutine((StartCooldown()));
         }
 
@@ -83,6 +87,11 @@ namespace Game
             IsAvailable = false;
             yield return new WaitForSeconds(_cooldownDuration);
             IsAvailable = true;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawSphere(_hitBoxOrigin.transform.position, _rayCastRadius);
         }
     }
 }
