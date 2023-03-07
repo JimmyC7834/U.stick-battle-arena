@@ -19,11 +19,6 @@ namespace Game
 
         private void Start()
         {
-<<<<<<< HEAD
-            _gameService.AudioManager.PlayAudio(AudioID.Click);
-            _gameSettings.SetGameplayStageID(SceneID.Farm);
-            _gameService.SceneManager.LoadScene(_gameSettings.GameplayStageID);
-=======
             for (int i = 0; i < _mapButtons.Length; i++)
             {
                 UI_MapButton button = _mapButtons[i];
@@ -33,31 +28,28 @@ namespace Game
 
         private void SetStage(UI_MapButton button)
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Click);
             _gameSettings.SetGameplayStageID(button.SceneID);
             _background.sprite = button.PreviewImage;
->>>>>>> main
         }
         
 
         public void RandomSelect()
         {
-<<<<<<< HEAD
             _gameService.AudioManager.PlayAudio(AudioID.Click);
-            _gameSettings.SetGameplayStageID(SceneID.Farm);
-            _gameService.SceneManager.LoadScene(_gameSettings.GameplayStageID);
-=======
             SetStage(_mapButtons[Random.Range(0, _mapButtons.Length)]);
         }
         
         public void GameStart()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Click);
             _gameService.GameStart();
         }
 
         public void BackToPrevious()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Return);
             _gameService.SceneManager.LoadScene(_previousScene);
->>>>>>> main
         }
     }
 }
