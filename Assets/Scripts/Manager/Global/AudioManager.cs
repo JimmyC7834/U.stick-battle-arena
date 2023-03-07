@@ -95,5 +95,11 @@ namespace Game
             // ugly conversion between the enums
             return (AudioID) (Convert.ToInt32(sceneID) + 92);
         }
+
+        private void OnValidate()
+        {
+            
+        }
+        
     }
 }

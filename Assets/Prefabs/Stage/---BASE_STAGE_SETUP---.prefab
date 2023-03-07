@@ -440,42 +440,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8086936792281506999, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936792281506999, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936792281506999, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936792281506999, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936792281506999, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936793495207040, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936793495207040, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936793495207040, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936793495207040, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8086936793532571466, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -523,10 +487,6 @@ PrefabInstance:
     - target: {fileID: 8086936793532571469, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
       propertyPath: m_Name
       value: ---GAMEPLAY_UI---
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086936794054657805, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
-      propertyPath: m_AllowMSAA
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
