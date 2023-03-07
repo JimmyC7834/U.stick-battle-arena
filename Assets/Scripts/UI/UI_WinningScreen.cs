@@ -6,6 +6,7 @@ namespace Game.UI
 {
     public class UI_WinningScreen : MonoBehaviour
     {
+        [SerializeField] private GameService _gameService;
         [SerializeField] private GameSettingsSO _gameSettings;
         [SerializeField] private TMP_Text _playerText;
         [SerializeField] private TMP_Text _playerScore;
@@ -15,6 +16,7 @@ namespace Game.UI
         private void OnEnable()
         {
             (PlayerReadyInfo, int) winInfo = _gameSettings.WinnerInfo;
+            _gameService.AudioManager.PlayAudio(AudioID.Win);
             _playerText.text = winInfo.Item1.PlayerID.ToString();
             _playerScore.text = winInfo.Item2.ToString();
             _playerDisplay.color = winInfo.Item1.Color;

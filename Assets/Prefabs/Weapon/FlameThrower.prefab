@@ -5003,10 +5003,18 @@ MonoBehaviour:
   _visual: {fileID: 4961244622899746949}
   _audioOnUse: 13
   _audioOnEquip: 9
+  _maxTilt: 70
+  _tiltSpeed: 100
+  _recoilAmount: 20
+  _recoilForce: {x: 0, y: 0}
   _id: 9
   _maxDurability: 30
   _durability: 30
+  IsAvailable: 1
+  _cooldownDuration: 0
   _damage: 1
+  _score: 1
+  _thrust: 0
   _rayCastRadius: 1
   _hitBoxOrigin: {fileID: 3189781468407678171}
   _fireInterval: 0.2
