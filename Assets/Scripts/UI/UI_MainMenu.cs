@@ -19,7 +19,7 @@ namespace Game
 
         public void QuitGame()
         {
-            _gameService.AudioManager.PlayAudio(AudioID.Click);
+            _gameService.AudioManager.PlayAudio(AudioID.Return);
             _gameService.SceneManager.ExitGame();
         }
     }
