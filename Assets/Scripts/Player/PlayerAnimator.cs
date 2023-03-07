@@ -13,10 +13,7 @@ namespace Game.Player
         [SerializeField] private float _maxTilt = 4;
 
         [SerializeField] private float _tiltSpeed = 20;
-
-        // LandAnimDuration controls the length of the landing animation
-        [SerializeField] private float _landAnimDuration = .45f;
-
+        
         // Grab renderer
         [SerializeField] private SpriteRenderer _renderer;
 

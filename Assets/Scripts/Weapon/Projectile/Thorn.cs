@@ -8,16 +8,14 @@ namespace Game
     {
         [SerializeField] private float _durationTime;
         [SerializeField] private float _thrust;
-
+ 
         private float _currTime;
-        private Rigidbody2D _rigidbody;
         
         private void Start()
         {
             OnHitStage += Stick;
             OnHitPlayer += DealDamage;
             
-            _rigidbody = GetComponent<Rigidbody2D>();
             _currTime = _durationTime;
         }
 
@@ -35,9 +33,9 @@ namespace Game
 
         private void Stick()
         {
-            _rigidbody.velocity = Vector2.zero;
-            _rigidbody.isKinematic = true;
-            _rigidbody.gravityScale = 0f;
+            Rigidbody.velocity = Vector2.zero;
+            Rigidbody.isKinematic = true;
+            Rigidbody.gravityScale = 0f;
             _hit = false; // let the collider still active to detect collision
         }
 

@@ -23,8 +23,13 @@ namespace Game
         FlameThrower = 9,
         ThornItem = 10,
         MineItem = 11,
-        Trap = 13,
-        Health = 14,
+        BaseballBat = 12,
+        Spear = 13,
+        BrassKnuckles = 14,
+        Longsword = 15,
+        Brick = 16,
+        Trap = 17,
+        Health = 18,
     }
 
     public class UsableItemManager : MonoBehaviour
@@ -35,6 +40,8 @@ namespace Game
             UsableItemID.Shotgun, UsableItemID.Sniper, UsableItemID.HandGrenade,
             UsableItemID.SMG, UsableItemID.Minigun, UsableItemID.FlameThrower,
             UsableItemID.ThornItem, UsableItemID.MineItem, UsableItemID.Trap, UsableItemID.Health
+            UsableItemID.BaseballBat, UsableItemID.Spear, UsableItemID.BrassKnuckles, 
+            UsableItemID.Brick, UsableItemID.Longsword
         };
 
         public event UnityAction OnReturnUsableItem = () => { };
