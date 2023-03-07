@@ -21,7 +21,7 @@ namespace Game
             OnItemUseUp += (_) => Stop();
             OnBreak += (_) => Stop();
             OnHold += (_) => Stop();
-            _fireEffect.Stop();
+            _fireEffect.gameObject.SetActive(false);
         }
 
         private void Update()
@@ -45,18 +45,18 @@ namespace Game
             _shooting = true;
             _shooter = shooter;
             _currTime = 0; // immediate shoot
-            _fireEffect.Play();
+            _fireEffect.gameObject.SetActive(true);
         }
 
         private void Stop()
         {
             _shooting = false;
-            _fireEffect.Stop();
+            _fireEffect.gameObject.SetActive(false);
         }
 
         private void OnDisable()
         {
-            _fireEffect.Stop();
+            _fireEffect.gameObject.SetActive(false);
         }
     }
 }

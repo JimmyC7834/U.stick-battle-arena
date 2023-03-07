@@ -17,10 +17,12 @@ namespace Game
         SniperBullet = 3,
         SMGBullet = 4,
         ShotgunBullet = 5,
-        Grenade = 6,
+        HandGrenade = 6,
         MinigunBullet = 7,
         Thorn = 8,
         Mine = 9,
+        Rocket = 10,
+        Grenade = 11,
     }
 
     /**
@@ -30,10 +32,10 @@ namespace Game
     {
         public static ProjectileID[] ProjectileIDs =
         {
-            ProjectileID.Arrow, ProjectileID.Grenade, 
+            ProjectileID.Arrow, ProjectileID.HandGrenade, 
             ProjectileID.PistolBullet, ProjectileID.ShotgunBullet, 
             ProjectileID.SniperBullet, ProjectileID.SMGBullet, ProjectileID.MinigunBullet,
-            ProjectileID.Thorn, ProjectileID.Mine,
+            ProjectileID.Thorn, ProjectileID.Mine, ProjectileID.Rocket, ProjectileID.Grenade
         };
         
         private Dictionary<ProjectileID, ProjectilePool> _poolMap;

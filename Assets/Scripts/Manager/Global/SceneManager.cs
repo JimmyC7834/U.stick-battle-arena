@@ -18,6 +18,8 @@ namespace Game
         Factory = 12,
         Waterfall = 13,
         Mine = 14,
+        Dungeon = 15,
+        Snow = 16,
     }
     
     /**
