@@ -30,7 +30,7 @@ namespace Game
         [SerializeField] private PlayerSpawnPoint[] _playerSpawnPoint;
         [SerializeField] private int _playerDefaultLife;
         private Transform _parent;
-        private Dictionary<PlayerID, float> _scoreboard;
+        private Dictionary<PlayerID, int> _scoreboard;
         private Dictionary<PlayerID, int> _remainingLife;
         private Dictionary<PlayerID, PlayerStat> _playerList;
 
@@ -46,7 +46,7 @@ namespace Game
 
         public void Initialize()
         {
-            _scoreboard = new Dictionary<PlayerID, float>();
+            _scoreboard = new Dictionary<PlayerID, int>();
             _remainingLife = new Dictionary<PlayerID, int>();
             _playerList = new Dictionary<PlayerID, PlayerStat>();
             _parent = new GameObject("Player Pool").GetComponent<Transform>();
@@ -85,7 +85,7 @@ namespace Game
         /**
          * Increase the score of given player by given score.
          */
-        public void IncreaseScore(PlayerID id, float score)
+        public void IncreaseScore(PlayerID id, int score)
         {
             _scoreboard[id] += score;
             Debug.Log($"{id} got a score of {GetScore(id)}");
@@ -96,7 +96,7 @@ namespace Game
         /**
          * Decrease the score of given player by given score.
          */
-        public void DecreaseScore(PlayerID id, float score)
+        public void DecreaseScore(PlayerID id, int score)
         {
             _scoreboard[id] -= score;
             Debug.Log($"{id} got a score of {GetScore(id)}");
@@ -122,7 +122,7 @@ namespace Game
             Debug.Log($"{id} got {GetRemainingLife(id)} life(s) left");
         }
 
-        public float GetScore(PlayerID id)
+        public int GetScore(PlayerID id)
         {
             if (!_scoreboard.ContainsKey(id))
                 return 0;

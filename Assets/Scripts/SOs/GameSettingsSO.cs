@@ -29,6 +29,7 @@ namespace Game
         public int PlayerCount { get; private set; } = MIN_PLAYER_COUNT;
         public int PlayerLifeCount { get; private set; } = 5;
         public SceneID GameplayStageID { get; private set; }
+        public (PlayerReadyInfo, int) WinnerInfo { get; private set; }
         public GameModeID GameModeID { get; private set; }
         public static readonly SceneID[] NON_STAGE_IDS =
         {
@@ -83,6 +84,11 @@ namespace Game
                 _playerSettings = new FlexibleDictionary<PlayerID, PlayerReadyInfo>();
 
             _playerSettings[info.PlayerID] = info;
+        }
+        
+        public void SetWinner(PlayerID id, int score)
+        {
+            WinnerInfo = (_playerSettings[id], score);
         }
         
         public PlayerReadyInfo GetPlayerSettings(PlayerID id)

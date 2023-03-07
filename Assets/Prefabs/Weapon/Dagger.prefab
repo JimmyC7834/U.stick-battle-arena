@@ -141,7 +141,7 @@ MonoBehaviour:
   IsAvailable: 1
   _cooldownDuration: 0
   _damage: 3
-  _score: 0
+  _score: 3
   _thrust: 0
   _rayCastRadius: 0.3
   _hitBoxOrigin: {fileID: 3189781468407678171}

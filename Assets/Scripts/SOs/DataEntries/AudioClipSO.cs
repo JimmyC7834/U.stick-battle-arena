@@ -38,6 +38,7 @@ namespace Game
         Select2 = 23,
         Pause = 24,
         Explosion = 25,
+        Win = 26,
         
         // BGMs
         MainMenu = 100,
