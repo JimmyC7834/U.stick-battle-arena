@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3404898215662358123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: -0.174, z: 0}
+  m_LocalPosition: {x: -0.665, y: -0.174, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -128,17 +128,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _service: {fileID: 11400000, guid: d11d90276d601814a9e6fa01ec4f1a4b, type: 2}
   _icon: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
-  _visual: {fileID: 0}
+  _visual: {fileID: 4961244622899746949}
   _audioOnUse: 0
   _audioOnEquip: 0
   _id: 15
-  _maxDurability: 40
-  _durability: 40
+  _maxDurability: 10
+  _durability: 10
   IsAvailable: 1
-  CooldownDuration: 5
+  _cooldownDuration: 0.7
   _damage: 8
-  _knockbackDirection: {x: 1, y: 0}
-  _knockback: 25
+  _score: 8
+  _thrust: 10
   _rayCastRadius: 0.5
   _hitBoxOrigin: {fileID: 3189781468407678171}
 --- !u!1 &4961244622899746949
