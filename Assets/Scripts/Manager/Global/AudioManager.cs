@@ -20,15 +20,7 @@ namespace Game
         private void Awake()
         {
             _audioSources = new Dictionary<AudioID, AudioSource>();
-            StartCoroutine(AudioTest());
-
             _gameService.ProvideAudioManager(this);
-        }
-
-        private IEnumerator AudioTest()
-        {
-            yield return new WaitForSecondsRealtime(2);
-            // PlayAudio(AudioID.TestingAudio);
         }
 
         /**
