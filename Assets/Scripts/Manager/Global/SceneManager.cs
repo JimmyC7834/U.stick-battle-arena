@@ -17,6 +17,7 @@ namespace Game
         Space = 11,
         Factory = 12,
         Waterfall = 13,
+        Mine = 14,
     }
     
     /**
