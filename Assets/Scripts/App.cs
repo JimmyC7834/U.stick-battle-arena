@@ -19,6 +19,8 @@ namespace Game
             
             // temporary setting
             Application.targetFrameRate = 60;
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+            Screen.SetResolution(1920, 1080, true);
         }
 
         public static void ExitApplication()
