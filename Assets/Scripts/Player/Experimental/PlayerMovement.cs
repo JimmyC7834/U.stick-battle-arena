@@ -8,6 +8,7 @@
 
 #region
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -48,6 +49,11 @@ namespace Game.Player
 		//Wall Jump
 		private float _wallJumpStartTime;
 		private int _lastWallJumpDir;
+		
+		// Audio
+		private bool _playWalking;
+		private float _playWalkingTime;
+		private float _playWalkingInterval = 0.2f;
 
 		private Vector2 _moveInput;
 		public float LastPressedJumpTime { get; private set; }
@@ -107,7 +113,9 @@ namespace Game.Player
 		}
 
 		private void OnDestroy()
-		{
+		{ 
+			_service.OnPause -= Deactivate;
+			_service.OnContinue -= Activate;
 			_input.DisableAllInput();
 			Destroy(_input);
 		}
@@ -116,7 +124,15 @@ namespace Game.Player
 		{
 			_moveInput = vec;
 			if (_moveInput.x != 0)
+			{
 				CheckDirectionToFace(_moveInput.x < 0);
+				_playWalkingTime = 0;
+				_playWalking = true;
+			}
+			else
+			{
+				_playWalking = false;
+			}
 		
 		
 			if(_moveInput.y > 0 && !IsJumping)
@@ -255,6 +271,22 @@ namespace Game.Player
 				SetGravityScale(Data.gravityScale);
 			}
 			#endregion
+			
+			#region AUDIO
+
+			if (_playWalking && !IsJumping && RB.velocity.y == 0)
+			{
+				if (_playWalkingTime > 0)
+				{
+					_playWalkingTime -= Time.deltaTime;
+				}
+				else
+				{
+					_playWalkingTime = _playWalkingInterval;
+					_service.AudioManager.PlayAudio(AudioID.Walk);
+				}
+			}
+			#endregion
 		}
 
 		private void FixedUpdate()
@@ -361,6 +393,7 @@ namespace Game.Player
 		private void Jump()
 		{
 			//Ensures we can't call Jump multiple times from one press
+			_service.AudioManager.PlayAudio(AudioID.Jump);
 			LastPressedJumpTime = 0;
 			LastOnGroundTime = 0;
 
@@ -379,6 +412,7 @@ namespace Game.Player
 		private void WallJump(int dir)
 		{
 			//Ensures we can't call Wall Jump multiple times from one press
+			_service.AudioManager.PlayAudio(AudioID.Jump);
 			LastPressedJumpTime = 0;
 			LastOnGroundTime = 0;
 			LastOnWallRightTime = 0;

@@ -22,6 +22,11 @@ namespace Game.UI
                 _playerPanels[i].OnJoin += AddPlayerCount;
             }
             _gameSettings.SetPlayerCount(GameSettingsSO.MIN_PLAYER_COUNT);
+
+            if (!_gameService.AudioManager.AudioIsPlaying(AudioID.Menus))
+            {
+                _gameService.AudioManager.PlayAudio(AudioID.Menus);
+            }
         }
 
         private void CheckGameStart()
@@ -58,6 +63,8 @@ namespace Game.UI
 
         public void ReturnToMainMenu()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Return);
+            _gameService.AudioManager.StopAudio(AudioID.Menus);
             _gameService.SceneManager.LoadScene(SceneID.MainMenu);
         }
         

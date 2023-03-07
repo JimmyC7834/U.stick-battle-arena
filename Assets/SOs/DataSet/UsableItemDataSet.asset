@@ -37,8 +37,6 @@ MonoBehaviour:
     _prefab: {fileID: 5972402407711471559, guid: 27199f25df9b9204597bb214b37a7f76, type: 3}
   - _id: 12
     _prefab: {fileID: 5298690914736311550, guid: 887080c1c46379d40932fbcbd6a2af1d, type: 3}
-  - _id: 13
-    _prefab: {fileID: 5593602879399396627, guid: 89df9c3d036e50d4daf465c4ebfc0480, type: 3}
   - _id: 14
     _prefab: {fileID: -5706536875877213394, guid: 16538a9c956410448a5e7c9d312e7fa9, type: 3}
   - _id: 15

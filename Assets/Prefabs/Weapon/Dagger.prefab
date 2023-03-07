@@ -131,10 +131,18 @@ MonoBehaviour:
   _visual: {fileID: 4961244622899746949}
   _audioOnUse: 13
   _audioOnEquip: 14
+  _maxTilt: 100
+  _tiltSpeed: 100
+  _recoilAmount: -100
+  _recoilForce: {x: 0, y: 0}
   _id: 2
   _maxDurability: 6
   _durability: 6
+  IsAvailable: 1
+  _cooldownDuration: 0
   _damage: 3
+  _score: 0
+  _thrust: 0
   _rayCastRadius: 0.3
   _hitBoxOrigin: {fileID: 3189781468407678171}
 --- !u!1 &4961244622899746949
@@ -240,7 +248,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -78989315
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e58845b5286681b4289f25a381435480, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

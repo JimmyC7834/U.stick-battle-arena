@@ -15,6 +15,7 @@ namespace Game.UI
         public bool IsReady { get; private set; } = false;
         public bool Joined { get => _joined; }
 
+        [SerializeField] private GameService _gameService;
         [SerializeField] private PlayerInputReader _input;
         [SerializeField] private PlayerID _playerID;
         [SerializeField] private Sprite[] _playerAccessories;
@@ -94,11 +95,13 @@ namespace Game.UI
             // handle ready and un ready
             if (IsReady)
             {
+                _gameService.AudioManager.PlayAudio(AudioID.Return);
                 IsReady = false;
                 _readyText.gameObject.SetActive(false);
                 return;
             }
             
+            _gameService.AudioManager.PlayAudio(AudioID.Click);
             IsReady = true;
             _readyText.gameObject.SetActive(true);
             OnReady.Invoke(
@@ -121,6 +124,7 @@ namespace Game.UI
         {
             if (vec.x > 0)
             {
+                _gameService.AudioManager.PlayAudio(AudioID.Click);
                 _spriteSelector.Next();
                 _arrowRight.anchoredPosition = 
                     _arrowRightOrigin + Vector3.right * _moveDistance;
@@ -129,6 +133,7 @@ namespace Game.UI
 
             if (vec.x < 0)
             {
+                _gameService.AudioManager.PlayAudio(AudioID.Click);
                 _spriteSelector.Prev();
                 _arrowLeft.anchoredPosition = 
                     _arrowLeftOrigin + Vector3.left * _moveDistance;
@@ -137,6 +142,7 @@ namespace Game.UI
             
             if (vec.y > 0)
             {
+                _gameService.AudioManager.PlayAudio(AudioID.Click);
                 _colorSelector.Next();
                 _arrowUp.anchoredPosition = 
                     _arrowUpOrigin + Vector3.up * _moveDistance;
@@ -145,6 +151,7 @@ namespace Game.UI
             
             if (vec.y < 0)
             {
+                _gameService.AudioManager.PlayAudio(AudioID.Click);
                 _colorSelector.Prev();
                 _arrowDown.anchoredPosition = 
                     _arrowDownOrigin + Vector3.down * _moveDistance;

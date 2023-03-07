@@ -24,10 +24,16 @@ namespace Game
                 UI_MapButton button = _mapButtons[i];
                 button.Button.onClick.AddListener(() => SetStage(button));
             }
+            
+            if (!_gameService.AudioManager.AudioIsPlaying(AudioID.Menus))
+            {
+                _gameService.AudioManager.PlayAudio(AudioID.Menus);
+            }
         }
 
         private void SetStage(UI_MapButton button)
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Click);
             _gameSettings.SetGameplayStageID(button.SceneID);
             _background.sprite = button.PreviewImage;
         }
@@ -35,16 +41,20 @@ namespace Game
 
         public void RandomSelect()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Click);
             SetStage(_mapButtons[Random.Range(0, _mapButtons.Length)]);
         }
         
         public void GameStart()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Click);
+            _gameService.AudioManager.StopAudio(AudioID.Menus);
             _gameService.GameStart();
         }
 
         public void BackToPrevious()
         {
+            _gameService.AudioManager.PlayAudio(AudioID.Return);
             _gameService.SceneManager.LoadScene(_previousScene);
         }
     }
