@@ -8,6 +8,7 @@
 
 #region
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -112,7 +113,9 @@ namespace Game.Player
 		}
 
 		private void OnDestroy()
-		{
+		{ 
+			_service.OnPause -= Deactivate;
+			_service.OnContinue -= Activate;
 			_input.DisableAllInput();
 			Destroy(_input);
 		}
