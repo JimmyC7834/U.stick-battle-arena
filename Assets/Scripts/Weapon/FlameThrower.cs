@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using UnityEngine;
 
 #endregion
@@ -53,5 +54,9 @@ namespace Game
             _fireEffect.Stop();
         }
 
+        private void OnDisable()
+        {
+            _fireEffect.Stop();
+        }
     }
 }
