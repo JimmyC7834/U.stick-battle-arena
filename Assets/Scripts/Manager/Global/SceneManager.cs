@@ -19,6 +19,7 @@ namespace Game
         Waterfall = 13,
         Mine = 14,
         Dungeon = 15,
+        Snow = 16,
     }
     
     /**
