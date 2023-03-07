@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb59846d8c0e02479e0c80cc13c8f5c, type: 3}
   m_Name: Walk
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: c154f64ebeefae2439d5fc61cc04599a, type: 3}
+  _audioClip: {fileID: 8300000, guid: 8af35dd9004b4aa48a86877ef8f54f8e, type: 3}
   _id: 15
   _defaultSetting:
     _pitch: 1

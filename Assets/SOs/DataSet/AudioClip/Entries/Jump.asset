@@ -15,6 +15,6 @@ MonoBehaviour:
   _audioClip: {fileID: 8300000, guid: 128f9d6c20182ee4a9c7f3c3c9b580ca, type: 3}
   _id: 21
   _defaultSetting:
-    _pitch: 1
+    _pitch: 0.5
     _volume: 0.3
     _loop: 0
