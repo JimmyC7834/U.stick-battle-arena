@@ -12,6 +12,7 @@ namespace Game
     {
         [SerializeField] private float _splashRadius;
         [SerializeField] private float _explodeTime;
+        [SerializeField] private GameObject _explosionVisual;
 
         private float _currTime;
         
@@ -58,6 +59,12 @@ namespace Game
                 _service.PlayerManager.
                     GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
             }
+            
+            GameObject explosion = Instantiate(_explosionVisual, transform).gameObject;
+            explosion.transform.position = transform.position;
+            explosion.transform.SetParent(null);
+            _service.AudioManager.PlayAudio(AudioID.Explosion);
+
             ReturnToPool();
         }
     }
