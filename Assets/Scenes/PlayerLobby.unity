@@ -2512,6 +2512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1009474101}
+  - component: {fileID: 1009474102}
   m_Layer: 5
   m_Name: MainManuButton
   m_TagString: Untagged
@@ -2541,6 +2542,19 @@ RectTransform:
   m_AnchoredPosition: {x: 133.0144, y: 0}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1009474102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009474100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2b85e632b947d2848d15c85b2cba59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameService: {fileID: 11400000, guid: e6f021f86780f1d4293d31b4d110feaa, type: 2}
 --- !u!1 &1014055224
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,6 +35,7 @@ namespace Game.UI
         {
             Time.timeScale = 1;
             _gameService.AudioManager.PlayAudio(AudioID.Return);
+            _gameService.StopStageBGM();
             _gameService.SceneManager.LoadScene(SceneID.MainMenu);
         }
 
