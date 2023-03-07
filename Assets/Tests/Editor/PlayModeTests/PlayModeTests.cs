@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using System;
 
 public class PlayModeTests
 {
-    // A Test behaves as an ordinary method
-    [Test]
-    public void PlayModeTestsSimplePasses()
-    {
-        // Use the Assert class to test conditions
-    }
-
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
     [UnityTest]
-    public IEnumerator PlayModeTestsWithEnumeratorPasses()
+    public IEnumerator GameObjectRigidBodyAffectedByPhysics()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        var go = new GameObject();
+        go.AddComponent<Rigidbody2D>();
+        var originalPosition = go.transform.position.y;
+
+        yield return new WaitForFixedUpdate();
+
+        Assert.AreNotEqual(originalPosition, go.transform.position.y);
     }
 }
