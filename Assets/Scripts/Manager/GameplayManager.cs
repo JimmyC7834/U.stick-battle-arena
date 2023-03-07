@@ -1,5 +1,9 @@
-﻿using Game.DataSet;
+﻿#region
+
+using Game.DataSet;
 using UnityEngine;
+
+#endregion
 
 namespace Game
 {
@@ -22,7 +26,7 @@ namespace Game
         {
             // temporary set game mode for battle royal mode
             // TODO: wait for game mode menu and change this
-            _gameSettings.SetGameMode(GameModeID.BattleRoyal);
+            _gameSettings.SetGameMode(GameModeID.TargetScore);
             _gameModeLogic = _gameModeLogicDataSet[_gameSettings.GameModeID];
             
             _service.ProvideProjectileManager(_projectileManager);

@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace Game
 {
@@ -9,7 +13,7 @@ namespace Game
         [SerializeField] protected float _gravity;
         
         [SerializeField] private ProjectileID _projectileID;
-        private Transform _flipParent => _shootingPoint.parent.parent.parent;
+        protected Transform _flipParent => _shootingPoint.parent.parent.parent;
 
         protected void Launch(PlayerID shooter)
         {

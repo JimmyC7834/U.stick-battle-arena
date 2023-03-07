@@ -1,5 +1,9 @@
+#region
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+#endregion
 
 namespace Game
 {
@@ -8,7 +12,9 @@ namespace Game
         // GlobalManagers = 1,
         MainMenu = 2,
         MapSelectionMenu = 3,
+        PlayerLobby = 4,
         Farm = 10,
+        Space = 11,
     }
     
     /**
@@ -29,6 +35,11 @@ namespace Game
          */
         public void LoadScene(SceneID id)
         {
+            _gameService.SceneTransition.CloseScene(() => LoadSceneProcess(id));
+        }
+
+        private void LoadSceneProcess(SceneID id)
+        {
             UnityEngine.SceneManagement.SceneManager
                 .UnloadSceneAsync(_currentScene.ToString());
             AdditionLoadScene(id);
@@ -41,7 +52,13 @@ namespace Game
         {
             _currentScene = id;
             UnityEngine.SceneManagement.SceneManager
-                .LoadScene(id.ToString(), LoadSceneMode.Additive);
+                .LoadSceneAsync(
+                    id.ToString(), 
+                    LoadSceneMode.Additive).completed += (_) =>
+            {
+                if (_gameService.SceneTransition == null) return;
+                _gameService.SceneTransition.OpenScene(null);
+            };
         }
 
         public void ExitGame()

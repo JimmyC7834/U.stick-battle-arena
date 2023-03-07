@@ -1,5 +1,9 @@
+#region
+
 using Game.Player;
 using UnityEngine;
+
+#endregion
 
 namespace Game
 {
@@ -17,8 +21,7 @@ namespace Game
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(
                 transform.position, 
-                _splashRadius,
-                LayerMask.NameToLayer("Player"));
+                _splashRadius);
             foreach (Collider2D hit in hits)
             {
                 PlayerStat player = hit.GetComponent<PlayerStat>();
@@ -26,7 +29,8 @@ namespace Game
                 
                 DamageInfo damageInfo = CreateDamageInfo(player.ID);
                 // Deduct health of the player
-                _service.PlayerManager.IncreaseScore(damageInfo.Dealer, _score);
+                if (damageInfo.Dealer != damageInfo.Target)
+                    _service.PlayerManager.IncreaseScore(damageInfo.Dealer, _score);
                 _service.PlayerManager.
                     GetPlayerStat(damageInfo.Target).DeductHealth(damageInfo);
             }

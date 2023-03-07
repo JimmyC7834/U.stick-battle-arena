@@ -1,5 +1,9 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
 using UnityEngine.UI;
+
+#endregion
 
 namespace Game.UI
 {

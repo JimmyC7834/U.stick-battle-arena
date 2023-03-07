@@ -1,7 +1,12 @@
+#region
+
 using UnityEngine;
+
+#endregion
 
 namespace Game.Player
 {
+    [RequireComponent(typeof(PlayerMovement))]
     public class PlayerAnimator : MonoBehaviour
     {
         // maxTilt and tiltSpeed control rate and maximum pitch of rotation effect while moving
@@ -20,8 +25,7 @@ namespace Game.Player
 
         private PlayerMovement _player;
         private float _lockedTill;
-
-
+        
         private void Awake()
         {
             if (!TryGetComponent(out PlayerMovement player))
