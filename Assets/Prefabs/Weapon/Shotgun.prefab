@@ -135,6 +135,7 @@ MonoBehaviour:
   _maxTilt: 50
   _tiltSpeed: 65
   _recoilAmount: 110
+  _recoilForce: {x: 25, y: 0}
   _id: 6
   _maxDurability: 9
   _durability: 3

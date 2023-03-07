@@ -135,11 +135,12 @@ MonoBehaviour:
   _maxTilt: 90
   _tiltSpeed: 40
   _recoilAmount: 80
+  _recoilForce: {x: 5, y: 0}
   _id: 5
   _maxDurability: 30
   _durability: 30
   _shootingPoint: {fileID: 1822478866356062737}
-  _velocity: {x: 50, y: 0}
+  _velocity: {x: 40, y: 0}
   _gravity: 0
   _projectileID: 4
   _fireInterval: 0.1

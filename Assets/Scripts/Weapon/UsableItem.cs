@@ -23,6 +23,7 @@ namespace Game
         public int Durability => _durability;
         public float DurabilityPercent => (float) _durability / _maxDurability;
         public Transform PlayerTrans => transform.parent.parent;
+        public Rigidbody2D PlayerRD => PlayerTrans.GetComponent<Rigidbody2D>();
         
         /**
          * Invoked when this item is picked up
@@ -69,6 +70,8 @@ namespace Game
         [SerializeField] private float _tiltSpeed = 100f;
 		// Controls the angle added to the weapon per shot
 		[SerializeField] private float _recoilAmount = 20f;
+        // Force applied to player for recoil
+		[SerializeField] private Vector2 _recoilForce;
 
         private Rigidbody2D _rigidbody;
         private Collider2D _collider;
@@ -204,6 +207,7 @@ namespace Game
                     -_maxTilt,
                     _maxTilt,
                     Mathf.InverseLerp(-359, 359, _recoilAmount + _targetAngle.z)));
+                PlayerRD.AddForce(-_recoilForce, ForceMode2D.Impulse);
             }
             // If player facing left
             else
@@ -215,10 +219,11 @@ namespace Game
                     -_maxTilt,
                     _maxTilt,
                     Mathf.InverseLerp(-359, 359, _targetAngle.z - _recoilAmount)));
+                PlayerRD.AddForce(_recoilForce, ForceMode2D.Impulse);
             }
             // Set new target angle
 			_visual.transform.rotation = Quaternion.Euler(_targetAngle);
-		}
+        }
 
 		/**
          * Update in this class controls the smooth recovery from recoil
