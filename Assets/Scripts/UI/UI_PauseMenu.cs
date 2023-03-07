@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,8 +26,14 @@ namespace Game.UI
             gameObject.SetActive(false);
         }
 
+        private void OnDestroy()
+        {
+            _gameInputReader.escEvent -= HandleEsc;
+        }
+
         private void ReturnToMainMenu()
         {
+            Time.timeScale = 1;
             _gameService.AudioManager.PlayAudio(AudioID.Return);
             _gameService.SceneManager.LoadScene(SceneID.MainMenu);
         }
