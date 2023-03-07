@@ -449,6 +449,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8086936792281506999, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086936792281506999, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -633,7 +637,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---MANAGER---
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2713415237300666463, guid: 294d7b74872887346afd7906db05ef65, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 294d7b74872887346afd7906db05ef65, type: 3}
 --- !u!4 &4263841492221736813 stripped
 Transform:

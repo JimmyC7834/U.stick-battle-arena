@@ -27,6 +27,25 @@ namespace Game
         BowSwitch = 12,
         DaggerUse = 13,
         DaggerSwitch = 14,
+        Walk = 15,
+        ItemSpawn = 16,
+        JumpPad = 17,
+        Return = 18,
+        Click = 19,
+        Hover = 20,
+        Jump = 21,
+        Select1 = 22,
+        Select2 = 23,
+        Pause = 24,
+        
+        // BGMs
+        MainMenu = 100,
+        Menus = 101,
+        Farm = 102,
+        Space = 103,
+        Factory = 104,
+        Waterfall = 105,
+        Mine = 106,
     }
     
     [CreateAssetMenu(menuName = "Game/DataEntry/AudioClip")]

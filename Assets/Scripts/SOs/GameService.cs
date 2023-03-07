@@ -34,5 +34,15 @@ namespace Game
         {
             SceneManager.LoadScene(_gameSettings.GameplayStageID);
         }
+
+        public void PlayStageBGM()
+        {
+            AudioManager.PlayAudio(AudioManager.SceneIDToAudioID(_gameSettings.GameplayStageID));
+        }
+
+        public void StopStageBGM()
+        {
+            AudioManager.StopAudio(AudioManager.SceneIDToAudioID(_gameSettings.GameplayStageID));
+        }
     }
 }

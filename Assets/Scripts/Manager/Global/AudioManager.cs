@@ -1,5 +1,6 @@
 #region
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,22 +13,14 @@ namespace Game
     {
         [SerializeField] private GameService _gameService;
         [SerializeField] private AudioDataSetSO _audioDataSet;
-        
+
         // Maps each audio id to its source
         private Dictionary<AudioID, AudioSource> _audioSources;
 
         private void Awake()
         {
             _audioSources = new Dictionary<AudioID, AudioSource>();
-            StartCoroutine(AudioTest());
-
             _gameService.ProvideAudioManager(this);
-        }
-
-        private IEnumerator AudioTest()
-        {
-            yield return new WaitForSecondsRealtime(2);
-            // PlayAudio(AudioID.TestingAudio);
         }
 
         /**
@@ -58,6 +51,49 @@ namespace Game
             audioSource.loop = setting.Loop;
             
             audioSource.Play();
+        }
+        
+        /**
+         * Play audio clip with the given play setting
+         */
+        public void StopAudio(AudioID id)
+        {
+            if (id == AudioID.None) return;
+            if (!_audioDataSet.ContainsID(id)) return;
+            if (!_audioSources.ContainsKey(id)) return;
+
+            AudioSource audioSource = _audioSources[id];
+            StartCoroutine(StopAudio(audioSource));
+        }
+        
+        private IEnumerator StopAudio(AudioSource source)
+        {
+            float startV = source.volume;
+            while (source.volume > 0)
+            {
+                source.volume -= startV * Time.deltaTime / 0.5f;
+                yield return null;
+            }
+            
+            source.Stop();
+            source.volume = startV;
+        }
+
+        /**
+         * Return if the given audio is playing or not
+         */
+        public bool AudioIsPlaying(AudioID id)
+        {
+            if (!_audioSources.ContainsKey(id))
+                return false;
+            
+            return _audioSources[id].isPlaying;
+        }
+
+        public static AudioID SceneIDToAudioID(SceneID sceneID)
+        {
+            // ugly conversion between the enums
+            return (AudioID) (Convert.ToInt32(sceneID) + 92);
         }
     }
 }

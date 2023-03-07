@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using UnityEngine;
 
 #endregion
@@ -25,7 +26,7 @@ namespace Game
 
         private void Update()
         {
-            
+            base.Update();
             if (!_shooting) return;
             
             if (_currTime > 0)
@@ -53,5 +54,9 @@ namespace Game
             _fireEffect.Stop();
         }
 
+        private void OnDisable()
+        {
+            _fireEffect.Stop();
+        }
     }
 }

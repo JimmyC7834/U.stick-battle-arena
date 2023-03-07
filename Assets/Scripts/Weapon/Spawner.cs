@@ -66,6 +66,7 @@ namespace Game
             int rand = Random.Range(0, _weaponIDList.Count);
             int randPos = Random.Range(0, _positionEntries.Length);
 
+            _service.AudioManager.PlayAudio(AudioID.ItemSpawn);
             // Get a weapon from the pool and set to the current location
             UsableItem weapon = _service.UsableItemManager.SpawnProjectile(_weaponIDList[rand]);
             weapon.transform.position = _positionEntries[
