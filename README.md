@@ -23,3 +23,10 @@ Bugs are reported to `JimmyC7834/U.stick-battle-arena` repo under the issues tab
 ### Known Bugs
 - The build will stuck at black screen upon start up
 - projectiles passes through walls/floors from time to time
+### Team Members
+JimmyC7834: Jimmy
+Teru5244: Phoenix
+Fettuchoony: Todd
+dylannalcock: Dylan
+rhyswe: Ryse
+irontigeroutreach,tommydgithub: Tommy
