@@ -530,15 +530,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
---- !u!114 &7976257422298072434 stripped
+--- !u!114 &4456858893853654747 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8086936792141261005, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2545158844570686308, guid: b14b0e93b10a0ae4a8faa2d7e14c36b4, type: 3}
   m_PrefabInstance: {fileID: 2201074905959345599}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: ef72fbd304e94c8a9492cac339507fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &7976257423120806645 stripped
@@ -570,21 +570,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 2201074906404770250}
     m_Modifications:
     - target: {fileID: 2713415237300666460, guid: 294d7b74872887346afd7906db05ef65, type: 3}
-      propertyPath: m_Cameras.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2713415237300666460, guid: 294d7b74872887346afd7906db05ef65, type: 3}
       propertyPath: m_Cameras.Array.data[0]
       value: 
       objectReference: {fileID: 7976257423672453810}
-    - target: {fileID: 2713415237300666460, guid: 294d7b74872887346afd7906db05ef65, type: 3}
-      propertyPath: m_Cameras.Array.data[1]
-      value: 
-      objectReference: {fileID: 7731572298628141251}
     - target: {fileID: 2713415237465064600, guid: 294d7b74872887346afd7906db05ef65, type: 3}
-      propertyPath: _winningText
+      propertyPath: _winningScreen
       value: 
-      objectReference: {fileID: 7976257422298072434}
+      objectReference: {fileID: 4456858893853654747}
     - target: {fileID: 2713415237465064600, guid: 294d7b74872887346afd7906db05ef65, type: 3}
       propertyPath: _playerStatusPanel
       value: 
@@ -637,16 +629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ---MANAGER---
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2713415237300666463, guid: 294d7b74872887346afd7906db05ef65, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294d7b74872887346afd7906db05ef65, type: 3}
 --- !u!4 &4263841492221736813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2713415238296305140, guid: 294d7b74872887346afd7906db05ef65, type: 3}
-  m_PrefabInstance: {fileID: 2201074907687340697}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &7731572298628141251 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8486991706712037978, guid: 294d7b74872887346afd7906db05ef65, type: 3}
   m_PrefabInstance: {fileID: 2201074907687340697}
   m_PrefabAsset: {fileID: 0}

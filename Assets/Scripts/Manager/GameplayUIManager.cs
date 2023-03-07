@@ -11,9 +11,7 @@ namespace Game
     public class GameplayUIManager : MonoBehaviour
     {
         [SerializeField] private UI_PlayerStatusPanel _playerStatusPanel;
-        // temporary winning screen
-        // TODO: needs a designed winning effect
-        [SerializeField] private TMP_Text _winningText;
+        [SerializeField] private UI_WinningScreen _winningScreen;
 
         /**
          * Initialize gameplay UI elements,
@@ -28,9 +26,9 @@ namespace Game
          * Show the winning text for the player to screen
          * Temporary function, should be modified once the winning effect is decided 
          */
-        public void ShowWinningScreen(PlayerID id)
+        public void ShowWinningScreen()
         {
-            _winningText.text = $"{id} WIN";
+            _winningScreen.gameObject.SetActive(true);
         }
     }
 }

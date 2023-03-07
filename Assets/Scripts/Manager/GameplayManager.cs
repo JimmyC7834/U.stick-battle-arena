@@ -51,8 +51,9 @@ namespace Game
             // temporary winning effect
             // slow time and wait for 4 seconds to load back to main menu
             Time.timeScale = 0.25f;
-            _service.GameplayUIManager.ShowWinningScreen(winnerId);
-            Invoke(nameof(LoadBackToMainMenu), 1f);
+            _gameSettings.SetWinner(winnerId, _service.PlayerManager.GetScore(winnerId));
+            _service.GameplayUIManager.ShowWinningScreen();
+            Invoke(nameof(LoadBackToMainMenu), 2f);
         }
 
         private void LoadBackToMainMenu()
