@@ -2502,7 +2502,7 @@ MonoBehaviour:
   - {fileID: 1969902925}
   - {fileID: 1533740927}
   - {fileID: 1829878736}
-  _nextScene: 11
+  _nextScene: 3
 --- !u!1 &1009474100
 GameObject:
   m_ObjectHideFlags: 0

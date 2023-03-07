@@ -32,7 +32,7 @@ namespace Game
 
         public void GameStart()
         {
-            SceneManager.LoadScene(_gameSettings.StageID);
+            SceneManager.LoadScene(_gameSettings.GameplayStageID);
         }
     }
 }
