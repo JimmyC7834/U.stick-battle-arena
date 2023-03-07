@@ -100,7 +100,6 @@ namespace Game.UI
                 return;
             }
             
-            _gameService.AudioManager.PlayAudio(AudioID.Click1);
             IsReady = true;
             _readyText.gameObject.SetActive(true);
             OnReady.Invoke(

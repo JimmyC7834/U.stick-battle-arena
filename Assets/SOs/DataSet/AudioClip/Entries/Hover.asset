@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fb59846d8c0e02479e0c80cc13c8f5c, type: 3}
-  m_Name: Pause
+  m_Name: Hover
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: e3153fe9612ff7a489b604193a20e158, type: 3}
-  _id: 24
+  _audioClip: {fileID: 8300000, guid: 239edb221cbca7c4192ebf6f5b630651, type: 3}
+  _id: 20
   _defaultSetting:
     _pitch: 1
     _volume: 1
