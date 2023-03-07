@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fb59846d8c0e02479e0c80cc13c8f5c, type: 3}
-  m_Name: Farm
+  m_Name: MainMenu
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 353e6929316b75e45b68875dd9dd1e7e, type: 3}
-  _id: 102
+  _audioClip: {fileID: 8300000, guid: bd2aa6efc22738f45879a23009e0f521, type: 3}
+  _id: 100
   _defaultSetting:
     _pitch: 1
-    _volume: 1
-    _loop: 0
+    _volume: 0.4
+    _loop: 1
