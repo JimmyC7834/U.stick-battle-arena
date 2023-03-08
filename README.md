@@ -10,7 +10,7 @@ Our goal is to ship a finished game with refined details and fun gameplay by the
 3. To run the software, simply double click the `stick-battle-arena.exe` executable 
 * Note that on a mac machine the executable could be marked as malicious and cannot be started. Please change your machine settings to override the malicious warning
 ### User manual
-- Simply click on buttons to navigate between menus
+- Simply click on buttons to navigate between menus (press `f11` to switch between fullscreen and windowed mode)
 - To control your character, use the key specified (as we are supporting maximum of 4 player, the key mapping could be clamped):
   - Player1: `WASD` for movement, `1` for shooting/use item, `2` for switching between inventory items
   - Player2: `Arrow Keys` for movement, `Right shift` for shooting/use item, `Right ctrl` for switching between inventory items
@@ -23,6 +23,7 @@ Our goal is to ship a finished game with refined details and fun gameplay by the
 - Player Outfit
   - player can customize their character with differnt color tint and accessories provided.
 - Combat mechanisms:
+  - player can perform wall jumps by jumping against a wall
   - Items/Weapons will spawn randomly on stage for players to pick up.
   - Each player has two inventory slots such that item can be switched for more combat option.
   - Each weapon comes with a unique behaviour (Knockback, recoil, shooting rate, explosion, etc).
@@ -41,9 +42,9 @@ DO NOT submit a PR directly. Bug reports should be submitted as issues.
 - Player could get stuck on item objects when inventory is full as the player object cannot pick them up.
 - Players can possiblely pickup the same item object if they collided with the object at the same time.
 ### Team Members
-JimmyC7834: Jimmy
-Teru5244: Phoenix
-Fettuchoony: Todd
-dylannalcock: Dylan
-rhyswe: Ryse
-irontigeroutreach,tommydgithub: Tommy
+- JimmyC7834: Jimmy
+- Teru5244: Phoenix
+- Fettuchoony: Todd
+- dylannalcock: Dylan
+- rhyswe: Ryse
+- irontigeroutreach,tommydgithub: Tommy
