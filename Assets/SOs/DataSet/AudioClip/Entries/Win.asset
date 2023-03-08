@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb59846d8c0e02479e0c80cc13c8f5c, type: 3}
   m_Name: Win
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 163b4777afefd3040843f1574273decf, type: 3}
-  _id: 15
+  _audioClip: {fileID: 8300000, guid: 342adbec82b590745b56dad212cd6570, type: 3}
+  _id: 26
   _defaultSetting:
-    _pitch: 0.45
-    _volume: 0.35
+    _pitch: 1
+    _volume: 0.5
     _loop: 0
