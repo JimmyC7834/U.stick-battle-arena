@@ -17099,7 +17099,7 @@ MonoBehaviour:
   - {fileID: 484155889}
   - {fileID: 1346510137}
   _spawnInterval: 5
-  _maxItemNumber: 10
+  _maxItemNumber: 12
 --- !u!1 &1346510136
 GameObject:
   m_ObjectHideFlags: 0

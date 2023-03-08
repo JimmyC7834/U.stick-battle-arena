@@ -6606,6 +6606,16 @@ MonoBehaviour:
     odds: 1
   - id: 5
     odds: 2
+  - id: 10
+    odds: 2
+  - id: 11
+    odds: 2
+  - id: 12
+    odds: 2
+  - id: 17
+    odds: 1
+  - id: 18
+    odds: 1
   _positionEntries:
   - {fileID: 1662331807}
   - {fileID: 735992799}
@@ -6616,7 +6626,7 @@ MonoBehaviour:
   - {fileID: 2003639759}
   - {fileID: 1357044457}
   _spawnInterval: 5
-  _maxItemNumber: 8
+  _maxItemNumber: 12
 --- !u!4 &305429915
 Transform:
   m_ObjectHideFlags: 0
