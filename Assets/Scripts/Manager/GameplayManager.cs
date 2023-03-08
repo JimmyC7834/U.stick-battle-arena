@@ -25,20 +25,20 @@ namespace Game
         private void Awake()
         {
             _gameModeLogic = _gameModeLogicDataSet[_gameSettings.GameModeID];
-            
+
             _service.ProvideProjectileManager(_projectileManager);
             _service.ProvideUsableItemManager(_usableItemManager);
             _service.ProvidePlayerManager(_playerManager);
             _service.ProvideGameplayUIManager(_gameplayUIManager);
-
-            // Initialize managers in order of dependency
-            _playerManager.Initialize();
-            _gameplayUIManager.Initialize();
             
             // initialize and hook the game ended event
             _gameModeLogic.Initialize();
             _gameModeLogic.OnGameEnded += HandleGameEnded;
             
+            // Initialize managers in order of dependency
+            _playerManager.Initialize();
+            _gameplayUIManager.Initialize();
+
             _gameService.PlayStageBGM();
         }
 
