@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05ffc94136c7f9488c28dc2e448c93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _service: {fileID: 11400000, guid: e6f021f86780f1d4293d31b4d110feaa, type: 2}
   _jumpStrength: 300
   _visualTransform: {fileID: 4927325317042596852}
   _visualShakeDistance: 0.5

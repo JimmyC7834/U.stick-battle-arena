@@ -2034,7 +2034,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1308211264}
   m_Father: {fileID: 1089577009}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2150,8 +2151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 0}
-  _sceneID: 10
-  _previewImage: {fileID: 0}
+  _sceneID: 17
+  _previewImage: {fileID: 21300000, guid: ef921233a70b0f64c893e62e59a74e5a, type: 3}
 --- !u!114 &950588610
 MonoBehaviour:
   m_ObjectHideFlags: 0
