@@ -24,6 +24,7 @@ namespace Game.UI
         [SerializeField] private Image _playerDisplay;
         [SerializeField] private RectTransform _readyText;
         [SerializeField] private GameObject _joinPrompt;
+        [SerializeField] private GameObject _nextPlayer;
         [SerializeField] private bool _joined;
 
         [Header("Arrows Visual")]
@@ -88,6 +89,11 @@ namespace Game.UI
             {
                 _joined = true;
                 _joinPrompt.SetActive(false);
+                if (_nextPlayer != null)
+                {
+                    _nextPlayer.SetActive(true);
+                }
+                _gameService.AudioManager.PlayAudio(AudioID.Return);
                 OnJoin.Invoke();
                 return;
             }

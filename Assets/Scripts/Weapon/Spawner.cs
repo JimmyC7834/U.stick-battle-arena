@@ -37,6 +37,11 @@ namespace Game
                     _weaponIDList.Add(_entries[i].id);
                 }
             }
+
+            for (int i = 0; i < _maxItemNumber; i++)
+            {
+                SpawnWeapon();
+            } 
         }
 
         private void Update()
