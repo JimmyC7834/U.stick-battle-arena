@@ -20,6 +20,7 @@ namespace Game
         Mine = 14,
         Dungeon = 15,
         Snow = 16,
+        Land = 17,
     }
     
     /**
