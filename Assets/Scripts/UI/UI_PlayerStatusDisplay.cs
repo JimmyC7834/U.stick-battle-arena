@@ -77,7 +77,7 @@ namespace Game.UI
         private void UnHookToItemDurabilityChange(PlayerInventory inventory)
         {
             inventory.HeldItem.OnDurabilityChange -= UpdateDurabilityBar;
-            inventory.EquippedItem.OnBreak -= EmptyWeaponSlot;
+            inventory.HeldItem.OnBreak -= EmptyWeaponSlot;
         }
 
         private void UpdateDurabilityBar(UsableItem item)

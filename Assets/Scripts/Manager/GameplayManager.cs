@@ -24,9 +24,6 @@ namespace Game
         
         private void Awake()
         {
-            // temporary set game mode for battle royal mode
-            // TODO: wait for game mode menu and change this
-            _gameSettings.SetGameMode(GameModeID.TargetScore);
             _gameModeLogic = _gameModeLogicDataSet[_gameSettings.GameModeID];
             
             _service.ProvideProjectileManager(_projectileManager);
