@@ -27,8 +27,9 @@ namespace Game
         /**
          * Change the position of the player to the position of the spawner
          */
-        private void Respawn(int _)
+        private void Respawn(int life)
         {
+            if (life == 0) return;
             StartCoroutine(RespawnDelay());
         }
 
