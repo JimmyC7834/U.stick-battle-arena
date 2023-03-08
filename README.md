@@ -23,6 +23,7 @@ Our goal is to ship a finished game with refined details and fun gameplay by the
 - Player Outfit
   - player can customize their character with differnt color tint and accessories provided.
 - Combat mechanisms:
+  - player can perform wall jumps by jumping against a wall
   - Items/Weapons will spawn randomly on stage for players to pick up.
   - Each player has two inventory slots such that item can be switched for more combat option.
   - Each weapon comes with a unique behaviour (Knockback, recoil, shooting rate, explosion, etc).
