@@ -7,7 +7,8 @@ Our goal is to ship a finished game with refined details and fun gameplay by the
 1. Simple download the compressed file from the game release page:
   - [itch.io](https://jimmyc.itch.io/cse403-stick-battle-arena-alpha-release)
 2. Extract the content of the compressed file into the desired location. You will need `7zip` to uncompress the file.
-3. To run the software, simply double click the `stick-battle-arena.exe` executable
+3. To run the software, simply double click the `stick-battle-arena.exe` executable 
+* Note that on a mac machine the executable could be marked as malicious and cannot be started. Please change your machine settings to override the malicious warning
 ### User manual
 - Simply click on buttons to navigate between menus
 - To control your character, use the key specified (as we are supporting maximum of 4 player, the key mapping could be clamped):
@@ -18,7 +19,7 @@ Our goal is to ship a finished game with refined details and fun gameplay by the
 - Game mechanism:
 - There are two game mode for gameplay:
   - Battle royal mode: each player gets 5 lifes and the last one standing on the stage wins.
-  - Target score mode: The first player to get 100 scores wins.
+  - Target score mode: The first player to get 120 scores wins.
 - Player Outfit
   - player can customize their character with differnt color tint and accessories provided.
 - Combat mechanisms:
