@@ -719,6 +719,7 @@ MonoBehaviour:
   _playerDisplay: {fileID: 2018526587}
   _readyText: {fileID: 1680274838}
   _joinPrompt: {fileID: 0}
+  _nextPlayer: {fileID: 0}
   _joined: 1
   _arrowUp: {fileID: 118434067}
   _arrowDown: {fileID: 738409466}
@@ -3749,6 +3750,7 @@ MonoBehaviour:
   _playerDisplay: {fileID: 121120839}
   _readyText: {fileID: 1932862188}
   _joinPrompt: {fileID: 312366257}
+  _nextPlayer: {fileID: 1829878734}
   _joined: 0
   _arrowUp: {fileID: 34422490}
   _arrowDown: {fileID: 1646405273}
@@ -4474,7 +4476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1829878735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4495,9 +4497,9 @@ RectTransform:
   m_Father: {fileID: 38455705}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 587.5, y: -150}
   m_SizeDelta: {x: 325, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829878736
@@ -4548,6 +4550,7 @@ MonoBehaviour:
   _playerDisplay: {fileID: 1623260363}
   _readyText: {fileID: 35377028}
   _joinPrompt: {fileID: 39279250}
+  _nextPlayer: {fileID: 0}
   _joined: 0
   _arrowUp: {fileID: 1360772101}
   _arrowDown: {fileID: 196577510}
@@ -5295,6 +5298,7 @@ MonoBehaviour:
   _playerDisplay: {fileID: 1895270510}
   _readyText: {fileID: 1073190967}
   _joinPrompt: {fileID: 0}
+  _nextPlayer: {fileID: 0}
   _joined: 1
   _arrowUp: {fileID: 1352062496}
   _arrowDown: {fileID: 1581285415}
