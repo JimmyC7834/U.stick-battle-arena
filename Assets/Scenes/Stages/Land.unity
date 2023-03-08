@@ -4299,7 +4299,7 @@ MonoBehaviour:
   - {fileID: 1690605669}
   - {fileID: 516288647}
   _spawnInterval: 5
-  _maxItemNumber: 8
+  _maxItemNumber: 10
 --- !u!4 &688464255
 Transform:
   m_ObjectHideFlags: 0

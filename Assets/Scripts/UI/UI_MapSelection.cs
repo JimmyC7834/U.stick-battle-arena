@@ -29,6 +29,8 @@ namespace Game
             {
                 _gameService.AudioManager.PlayAudio(AudioID.Menus);
             }
+
+            RandomSelect();
         }
 
         private void SetStage(UI_MapButton button)
