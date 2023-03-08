@@ -48,7 +48,9 @@ namespace Game
         Factory = 104,
         Waterfall = 105,
         Mine = 106,
-        Land = 107,
+        Dungeon = 107,
+        Snow = 108,
+        Land = 109,
     }
     
     [CreateAssetMenu(menuName = "Game/DataEntry/AudioClip")]

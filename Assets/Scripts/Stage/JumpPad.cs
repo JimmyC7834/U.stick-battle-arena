@@ -11,6 +11,7 @@ namespace Game.Stage
     public class JumpPad : MonoBehaviour
     {
 
+        [SerializeField] private GameService _service;
         // Strength of the jump pad, force added in the upwards direction
         [SerializeField] private float _jumpStrength = 500f;
         [SerializeField] private Transform _visualTransform;
@@ -35,6 +36,9 @@ namespace Game.Stage
         private void OnTriggerEnter2D(Collider2D col)
         {
             Rigidbody2D target = col.gameObject.GetComponent<Rigidbody2D>();
+            
+            _service.AudioManager.PlayAudio(AudioID.JumpPad);
+            
             // Cancel out vertical velocity
             target.velocity = new Vector3(target.velocity.x, Math.Abs(target.velocity.y), 0);
             // Add upwards force
