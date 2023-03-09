@@ -40,6 +40,7 @@ Bugs are reported to `JimmyC7834/U.stick-battle-arena` repo under the issues tab
 DO NOT submit a PR directly. Bug reports should be submitted as issues.
 ### Known Bugs
 - Player could get stuck on item objects when inventory is full as the player object cannot pick them up.
+  - just use up the curren item and the player will be able to pick it up and solve the bug.
 - Players can possiblely pickup the same item object if they collided with the object at the same time.
 ### Team Members
 - JimmyC7834: Jimmy
